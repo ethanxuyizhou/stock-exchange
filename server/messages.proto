@@ -1,0 +1,55 @@
+syntax = "proto2";
+
+package exchange;
+
+enum StockType {
+  BOND = 1;
+  VALBS = 2;
+  VALE = 3; 
+}
+
+enum Dir {
+  BUY = 1;
+  SELL = 2; 
+}
+
+message PriceAndSize {
+  required int32 price = 1;
+  required int32 size = 2;
+}
+
+message Server {
+  enum MessageType {
+    HELLO = 1;
+    BOOK = 2;
+    FILL = 3;
+    REJECTED = 4;
+  }
+
+  message Position {
+    required StockType symbol = 1;
+    repeated PriceAndSize buy = 2;
+    repeated PriceAndSize sell = 3;
+  }
+
+  required MessageType t = 1;
+  optional Position book = 2;
+}
+
+message Client {
+  enum MessageType {
+    HELLO = 1;
+    ADD_ORDER = 2;
+  }
+
+  message Transaction {
+    required StockType symbol = 1;
+    required int32 price = 2;
+    required int32 size = 3;
+    required Dir dir = 4;
+  }
+
+  required MessageType t = 1;
+  optional Transaction add_order = 2;
+}
+
