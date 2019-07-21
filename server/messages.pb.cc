@@ -155,6 +155,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_messages_2eproto::offsets[] PR
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::exchange::ClientMessage, t_),
   PROTOBUF_FIELD_OFFSET(::exchange::ClientMessage, add_order_),
+  PROTOBUF_FIELD_OFFSET(::exchange::ClientMessage, name_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::exchange::PriceAndSize)},
@@ -182,17 +183,18 @@ const char descriptor_table_protodef_messages_2eproto[] PROTOBUF_SECTION_VARIABL
   "y\030\002 \003(\0132\026.exchange.PriceAndSize\022$\n\004sell\030"
   "\003 \003(\0132\026.exchange.PriceAndSize\":\n\013Message"
   "Type\022\t\n\005HELLO\020\000\022\010\n\004BOOK\020\001\022\010\n\004FILL\020\002\022\014\n\010R"
-  "EJECTED\020\003\"\215\002\n\rClientMessage\022.\n\001t\030\001 \001(\0162#"
+  "EJECTED\020\003\"\233\002\n\rClientMessage\022.\n\001t\030\001 \001(\0162#"
   ".exchange.ClientMessage.MessageType\0226\n\ta"
   "dd_order\030\002 \001(\0132#.exchange.ClientMessage."
-  "Transaction\032k\n\013Transaction\022#\n\006symbol\030\001 \001"
-  "(\0162\023.exchange.StockType\022\r\n\005price\030\002 \001(\005\022\014"
-  "\n\004size\030\003 \001(\005\022\032\n\003dir\030\004 \001(\0162\r.exchange.Dir"
-  "\"\'\n\013MessageType\022\t\n\005HELLO\020\000\022\r\n\tADD_ORDER\020"
-  "\001**\n\tStockType\022\010\n\004BOND\020\000\022\t\n\005VALBZ\020\001\022\010\n\004V"
-  "ALE\020\002*\030\n\003Dir\022\007\n\003BUY\020\000\022\010\n\004SELL\020\0012M\n\010Excha"
-  "nge\022A\n\007Message\022\027.exchange.ClientMessage\032"
-  "\027.exchange.ServerMessage\"\000(\0010\001b\006proto3"
+  "Transaction\022\014\n\004name\030\003 \001(\t\032k\n\013Transaction"
+  "\022#\n\006symbol\030\001 \001(\0162\023.exchange.StockType\022\r\n"
+  "\005price\030\002 \001(\005\022\014\n\004size\030\003 \001(\005\022\032\n\003dir\030\004 \001(\0162"
+  "\r.exchange.Dir\"\'\n\013MessageType\022\t\n\005HELLO\020\000"
+  "\022\r\n\tADD_ORDER\020\001**\n\tStockType\022\010\n\004BOND\020\000\022\t"
+  "\n\005VALBZ\020\001\022\010\n\004VALE\020\002*\030\n\003Dir\022\007\n\003BUY\020\000\022\010\n\004S"
+  "ELL\020\0012M\n\010Exchange\022A\n\007Message\022\027.exchange."
+  "ClientMessage\032\027.exchange.ServerMessage\"\000"
+  "(\0010\001b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_messages_2eproto_deps[1] = {
 };
@@ -206,7 +208,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_mes
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_messages_2eproto_once;
 static bool descriptor_table_messages_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_messages_2eproto = {
-  &descriptor_table_messages_2eproto_initialized, descriptor_table_protodef_messages_2eproto, "messages.proto", 798,
+  &descriptor_table_messages_2eproto_initialized, descriptor_table_protodef_messages_2eproto, "messages.proto", 812,
   &descriptor_table_messages_2eproto_once, descriptor_table_messages_2eproto_sccs, descriptor_table_messages_2eproto_deps, 5, 0,
   schemas, file_default_instances, TableStruct_messages_2eproto::offsets,
   file_level_metadata_messages_2eproto, 5, file_level_enum_descriptors_messages_2eproto, file_level_service_descriptors_messages_2eproto,
@@ -1549,6 +1551,10 @@ ClientMessage::ClientMessage(const ClientMessage& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_name().empty()) {
+    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+  }
   if (from.has_add_order()) {
     add_order_ = new ::exchange::ClientMessage_Transaction(*from.add_order_);
   } else {
@@ -1560,6 +1566,7 @@ ClientMessage::ClientMessage(const ClientMessage& from)
 
 void ClientMessage::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ClientMessage_messages_2eproto.base);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ::memset(&add_order_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&t_) -
       reinterpret_cast<char*>(&add_order_)) + sizeof(t_));
@@ -1571,6 +1578,7 @@ ClientMessage::~ClientMessage() {
 }
 
 void ClientMessage::SharedDtor() {
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete add_order_;
 }
 
@@ -1589,6 +1597,7 @@ void ClientMessage::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (GetArenaNoVirtual() == nullptr && add_order_ != nullptr) {
     delete add_order_;
   }
@@ -1617,6 +1626,13 @@ const char* ClientMessage::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(mutable_add_order(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string name = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParserUTF8(_internal_mutable_name(), ptr, ctx, "exchange.ClientMessage.name");
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1675,6 +1691,21 @@ bool ClientMessage::MergePartialFromCodedStream(
         break;
       }
 
+      // string name = 3;
+      case 3: {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (26 & 0xFF)) {
+          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadString(
+                input, this->_internal_mutable_name()));
+          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+            this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+            ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE,
+            "exchange.ClientMessage.name"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -1717,6 +1748,16 @@ failure:
         2, _Internal::add_order(this), target, stream);
   }
 
+  // string name = 3;
+  if (this->name().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "exchange.ClientMessage.name");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_name(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
@@ -1732,6 +1773,13 @@ size_t ClientMessage::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // string name = 3;
+  if (this->name().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
+  }
 
   // .exchange.ClientMessage.Transaction add_order = 2;
   if (this->has_add_order()) {
@@ -1777,6 +1825,10 @@ void ClientMessage::MergeFrom(const ClientMessage& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.name().size() > 0) {
+
+    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+  }
   if (from.has_add_order()) {
     mutable_add_order()->::exchange::ClientMessage_Transaction::MergeFrom(from.add_order());
   }
@@ -1806,6 +1858,8 @@ bool ClientMessage::IsInitialized() const {
 void ClientMessage::InternalSwap(ClientMessage* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
   swap(add_order_, other->add_order_);
   swap(t_, other->t_);
 }

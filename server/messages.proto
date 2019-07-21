@@ -51,6 +51,7 @@ message ClientMessage {
 
   MessageType t = 1;
   Transaction add_order = 2;
+  string name = 3;
 }
 
 service Exchange {

@@ -948,9 +948,26 @@ class ClientMessage :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kNameFieldNumber = 3,
     kAddOrderFieldNumber = 2,
     kTFieldNumber = 1,
   };
+  // string name = 3;
+  void clear_name();
+  const std::string& name() const;
+  void set_name(const std::string& value);
+  void set_name(std::string&& value);
+  void set_name(const char* value);
+  void set_name(const char* value, size_t size);
+  std::string* mutable_name();
+  std::string* release_name();
+  void set_allocated_name(std::string* name);
+  private:
+  const std::string& _internal_name() const;
+  void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
   // .exchange.ClientMessage.Transaction add_order = 2;
   bool has_add_order() const;
   private:
@@ -972,6 +989,7 @@ class ClientMessage :
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::exchange::ClientMessage_Transaction* add_order_;
   int t_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -1290,6 +1308,66 @@ inline void ClientMessage::set_allocated_add_order(::exchange::ClientMessage_Tra
   }
   add_order_ = add_order;
   // @@protoc_insertion_point(field_set_allocated:exchange.ClientMessage.add_order)
+}
+
+// string name = 3;
+inline void ClientMessage::clear_name() {
+  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& ClientMessage::name() const {
+  // @@protoc_insertion_point(field_get:exchange.ClientMessage.name)
+  return _internal_name();
+}
+inline void ClientMessage::set_name(const std::string& value) {
+  _internal_set_name(value);
+  // @@protoc_insertion_point(field_set:exchange.ClientMessage.name)
+}
+inline std::string* ClientMessage::mutable_name() {
+  // @@protoc_insertion_point(field_mutable:exchange.ClientMessage.name)
+  return _internal_mutable_name();
+}
+inline const std::string& ClientMessage::_internal_name() const {
+  return name_.GetNoArena();
+}
+inline void ClientMessage::_internal_set_name(const std::string& value) {
+  
+  name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+}
+inline void ClientMessage::set_name(std::string&& value) {
+  
+  name_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:exchange.ClientMessage.name)
+}
+inline void ClientMessage::set_name(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:exchange.ClientMessage.name)
+}
+inline void ClientMessage::set_name(const char* value, size_t size) {
+  
+  name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:exchange.ClientMessage.name)
+}
+inline std::string* ClientMessage::_internal_mutable_name() {
+  
+  return name_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* ClientMessage::release_name() {
+  // @@protoc_insertion_point(field_release:exchange.ClientMessage.name)
+  
+  return name_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void ClientMessage::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name);
+  // @@protoc_insertion_point(field_set_allocated:exchange.ClientMessage.name)
 }
 
 #ifdef __GNUC__
