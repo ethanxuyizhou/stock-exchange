@@ -189,7 +189,7 @@ const char descriptor_table_protodef_messages_2eproto[] PROTOBUF_SECTION_VARIABL
   "(\0162\023.exchange.StockType\022\r\n\005price\030\002 \001(\005\022\014"
   "\n\004size\030\003 \001(\005\022\032\n\003dir\030\004 \001(\0162\r.exchange.Dir"
   "\"\'\n\013MessageType\022\t\n\005HELLO\020\000\022\r\n\tADD_ORDER\020"
-  "\001**\n\tStockType\022\010\n\004BOND\020\000\022\t\n\005VALBS\020\001\022\010\n\004V"
+  "\001**\n\tStockType\022\010\n\004BOND\020\000\022\t\n\005VALBZ\020\001\022\010\n\004V"
   "ALE\020\002*\030\n\003Dir\022\007\n\003BUY\020\000\022\010\n\004SELL\020\0012M\n\010Excha"
   "nge\022A\n\007Message\022\027.exchange.ClientMessage\032"
   "\027.exchange.ServerMessage\"\000(\0010\001b\006proto3"

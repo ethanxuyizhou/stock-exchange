@@ -135,7 +135,7 @@ inline bool ClientMessage_MessageType_Parse(
 }
 enum StockType : int {
   BOND = 0,
-  VALBS = 1,
+  VALBZ = 1,
   VALE = 2,
   StockType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
   StockType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()

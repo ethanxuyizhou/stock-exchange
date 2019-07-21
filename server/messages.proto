@@ -4,7 +4,7 @@ package exchange;
 
 enum StockType {
   BOND = 0;
-  VALBS = 1;
+  VALBZ = 1;
   VALE = 2; 
 }
 
