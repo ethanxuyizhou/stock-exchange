@@ -14,59 +14,59 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_messages_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Client_Transaction_messages_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_messages_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ClientMessage_Transaction_messages_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_messages_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PriceAndSize_messages_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_messages_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Server_Position_messages_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_messages_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ServerMessage_Position_messages_2eproto;
 namespace exchange {
 class PriceAndSizeDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PriceAndSize> _instance;
 } _PriceAndSize_default_instance_;
-class Server_PositionDefaultTypeInternal {
+class ServerMessage_PositionDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Server_Position> _instance;
-} _Server_Position_default_instance_;
-class ServerDefaultTypeInternal {
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ServerMessage_Position> _instance;
+} _ServerMessage_Position_default_instance_;
+class ServerMessageDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Server> _instance;
-} _Server_default_instance_;
-class Client_TransactionDefaultTypeInternal {
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ServerMessage> _instance;
+} _ServerMessage_default_instance_;
+class ClientMessage_TransactionDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Client_Transaction> _instance;
-} _Client_Transaction_default_instance_;
-class ClientDefaultTypeInternal {
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ClientMessage_Transaction> _instance;
+} _ClientMessage_Transaction_default_instance_;
+class ClientMessageDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Client> _instance;
-} _Client_default_instance_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ClientMessage> _instance;
+} _ClientMessage_default_instance_;
 }  // namespace exchange
-static void InitDefaultsscc_info_Client_messages_2eproto() {
+static void InitDefaultsscc_info_ClientMessage_messages_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::exchange::_Client_default_instance_;
-    new (ptr) ::exchange::Client();
+    void* ptr = &::exchange::_ClientMessage_default_instance_;
+    new (ptr) ::exchange::ClientMessage();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::exchange::Client::InitAsDefaultInstance();
+  ::exchange::ClientMessage::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Client_messages_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_Client_messages_2eproto}, {
-      &scc_info_Client_Transaction_messages_2eproto.base,}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ClientMessage_messages_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_ClientMessage_messages_2eproto}, {
+      &scc_info_ClientMessage_Transaction_messages_2eproto.base,}};
 
-static void InitDefaultsscc_info_Client_Transaction_messages_2eproto() {
+static void InitDefaultsscc_info_ClientMessage_Transaction_messages_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::exchange::_Client_Transaction_default_instance_;
-    new (ptr) ::exchange::Client_Transaction();
+    void* ptr = &::exchange::_ClientMessage_Transaction_default_instance_;
+    new (ptr) ::exchange::ClientMessage_Transaction();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::exchange::Client_Transaction::InitAsDefaultInstance();
+  ::exchange::ClientMessage_Transaction::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Client_Transaction_messages_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_Client_Transaction_messages_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ClientMessage_Transaction_messages_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ClientMessage_Transaction_messages_2eproto}, {}};
 
 static void InitDefaultsscc_info_PriceAndSize_messages_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -82,34 +82,34 @@ static void InitDefaultsscc_info_PriceAndSize_messages_2eproto() {
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PriceAndSize_messages_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_PriceAndSize_messages_2eproto}, {}};
 
-static void InitDefaultsscc_info_Server_messages_2eproto() {
+static void InitDefaultsscc_info_ServerMessage_messages_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::exchange::_Server_default_instance_;
-    new (ptr) ::exchange::Server();
+    void* ptr = &::exchange::_ServerMessage_default_instance_;
+    new (ptr) ::exchange::ServerMessage();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::exchange::Server::InitAsDefaultInstance();
+  ::exchange::ServerMessage::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Server_messages_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_Server_messages_2eproto}, {
-      &scc_info_Server_Position_messages_2eproto.base,}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ServerMessage_messages_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_ServerMessage_messages_2eproto}, {
+      &scc_info_ServerMessage_Position_messages_2eproto.base,}};
 
-static void InitDefaultsscc_info_Server_Position_messages_2eproto() {
+static void InitDefaultsscc_info_ServerMessage_Position_messages_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::exchange::_Server_Position_default_instance_;
-    new (ptr) ::exchange::Server_Position();
+    void* ptr = &::exchange::_ServerMessage_Position_default_instance_;
+    new (ptr) ::exchange::ServerMessage_Position();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::exchange::Server_Position::InitAsDefaultInstance();
+  ::exchange::ServerMessage_Position::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Server_Position_messages_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_Server_Position_messages_2eproto}, {
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ServerMessage_Position_messages_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_ServerMessage_Position_messages_2eproto}, {
       &scc_info_PriceAndSize_messages_2eproto.base,}};
 
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_messages_2eproto[5];
@@ -117,106 +117,96 @@ static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptor
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_messages_2eproto = nullptr;
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_messages_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  PROTOBUF_FIELD_OFFSET(::exchange::PriceAndSize, _has_bits_),
+  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::exchange::PriceAndSize, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::exchange::PriceAndSize, price_),
   PROTOBUF_FIELD_OFFSET(::exchange::PriceAndSize, size_),
-  0,
-  1,
-  PROTOBUF_FIELD_OFFSET(::exchange::Server_Position, _has_bits_),
-  PROTOBUF_FIELD_OFFSET(::exchange::Server_Position, _internal_metadata_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::exchange::ServerMessage_Position, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::exchange::Server_Position, symbol_),
-  PROTOBUF_FIELD_OFFSET(::exchange::Server_Position, buy_),
-  PROTOBUF_FIELD_OFFSET(::exchange::Server_Position, sell_),
-  0,
-  ~0u,
-  ~0u,
-  PROTOBUF_FIELD_OFFSET(::exchange::Server, _has_bits_),
-  PROTOBUF_FIELD_OFFSET(::exchange::Server, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::exchange::ServerMessage_Position, symbol_),
+  PROTOBUF_FIELD_OFFSET(::exchange::ServerMessage_Position, buy_),
+  PROTOBUF_FIELD_OFFSET(::exchange::ServerMessage_Position, sell_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::exchange::ServerMessage, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::exchange::Server, t_),
-  PROTOBUF_FIELD_OFFSET(::exchange::Server, book_),
-  1,
-  0,
-  PROTOBUF_FIELD_OFFSET(::exchange::Client_Transaction, _has_bits_),
-  PROTOBUF_FIELD_OFFSET(::exchange::Client_Transaction, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::exchange::ServerMessage, t_),
+  PROTOBUF_FIELD_OFFSET(::exchange::ServerMessage, book_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::exchange::ClientMessage_Transaction, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::exchange::Client_Transaction, symbol_),
-  PROTOBUF_FIELD_OFFSET(::exchange::Client_Transaction, price_),
-  PROTOBUF_FIELD_OFFSET(::exchange::Client_Transaction, size_),
-  PROTOBUF_FIELD_OFFSET(::exchange::Client_Transaction, dir_),
-  2,
-  0,
-  1,
-  3,
-  PROTOBUF_FIELD_OFFSET(::exchange::Client, _has_bits_),
-  PROTOBUF_FIELD_OFFSET(::exchange::Client, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::exchange::ClientMessage_Transaction, symbol_),
+  PROTOBUF_FIELD_OFFSET(::exchange::ClientMessage_Transaction, price_),
+  PROTOBUF_FIELD_OFFSET(::exchange::ClientMessage_Transaction, size_),
+  PROTOBUF_FIELD_OFFSET(::exchange::ClientMessage_Transaction, dir_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::exchange::ClientMessage, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::exchange::Client, t_),
-  PROTOBUF_FIELD_OFFSET(::exchange::Client, add_order_),
-  1,
-  0,
+  PROTOBUF_FIELD_OFFSET(::exchange::ClientMessage, t_),
+  PROTOBUF_FIELD_OFFSET(::exchange::ClientMessage, add_order_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 7, sizeof(::exchange::PriceAndSize)},
-  { 9, 17, sizeof(::exchange::Server_Position)},
-  { 20, 27, sizeof(::exchange::Server)},
-  { 29, 38, sizeof(::exchange::Client_Transaction)},
-  { 42, 49, sizeof(::exchange::Client)},
+  { 0, -1, sizeof(::exchange::PriceAndSize)},
+  { 7, -1, sizeof(::exchange::ServerMessage_Position)},
+  { 15, -1, sizeof(::exchange::ServerMessage)},
+  { 22, -1, sizeof(::exchange::ClientMessage_Transaction)},
+  { 31, -1, sizeof(::exchange::ClientMessage)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::exchange::_PriceAndSize_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::exchange::_Server_Position_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::exchange::_Server_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::exchange::_Client_Transaction_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::exchange::_Client_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::exchange::_ServerMessage_Position_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::exchange::_ServerMessage_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::exchange::_ClientMessage_Transaction_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::exchange::_ClientMessage_default_instance_),
 };
 
 const char descriptor_table_protodef_messages_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\016messages.proto\022\010exchange\"+\n\014PriceAndSi"
-  "ze\022\r\n\005price\030\001 \002(\005\022\014\n\004size\030\002 \002(\005\"\222\002\n\006Serv"
-  "er\022\'\n\001t\030\001 \002(\0162\034.exchange.Server.MessageT"
-  "ype\022\'\n\004book\030\002 \001(\0132\031.exchange.Server.Posi"
-  "tion\032z\n\010Position\022#\n\006symbol\030\001 \002(\0162\023.excha"
-  "nge.StockType\022#\n\003buy\030\002 \003(\0132\026.exchange.Pr"
-  "iceAndSize\022$\n\004sell\030\003 \003(\0132\026.exchange.Pric"
-  "eAndSize\":\n\013MessageType\022\t\n\005HELLO\020\001\022\010\n\004BO"
-  "OK\020\002\022\010\n\004FILL\020\003\022\014\n\010REJECTED\020\004\"\370\001\n\006Client\022"
-  "\'\n\001t\030\001 \002(\0162\034.exchange.Client.MessageType"
-  "\022/\n\tadd_order\030\002 \001(\0132\034.exchange.Client.Tr"
-  "ansaction\032k\n\013Transaction\022#\n\006symbol\030\001 \002(\016"
-  "2\023.exchange.StockType\022\r\n\005price\030\002 \002(\005\022\014\n\004"
-  "size\030\003 \002(\005\022\032\n\003dir\030\004 \002(\0162\r.exchange.Dir\"\'"
-  "\n\013MessageType\022\t\n\005HELLO\020\001\022\r\n\tADD_ORDER\020\002*"
-  "*\n\tStockType\022\010\n\004BOND\020\001\022\t\n\005VALBS\020\002\022\010\n\004VAL"
-  "E\020\003*\030\n\003Dir\022\007\n\003BUY\020\001\022\010\n\004SELL\020\002"
+  "ze\022\r\n\005price\030\001 \001(\005\022\014\n\004size\030\002 \001(\005\"\247\002\n\rServ"
+  "erMessage\022.\n\001t\030\001 \001(\0162#.exchange.ServerMe"
+  "ssage.MessageType\022.\n\004book\030\002 \001(\0132 .exchan"
+  "ge.ServerMessage.Position\032z\n\010Position\022#\n"
+  "\006symbol\030\001 \001(\0162\023.exchange.StockType\022#\n\003bu"
+  "y\030\002 \003(\0132\026.exchange.PriceAndSize\022$\n\004sell\030"
+  "\003 \003(\0132\026.exchange.PriceAndSize\":\n\013Message"
+  "Type\022\t\n\005HELLO\020\000\022\010\n\004BOOK\020\001\022\010\n\004FILL\020\002\022\014\n\010R"
+  "EJECTED\020\003\"\215\002\n\rClientMessage\022.\n\001t\030\001 \001(\0162#"
+  ".exchange.ClientMessage.MessageType\0226\n\ta"
+  "dd_order\030\002 \001(\0132#.exchange.ClientMessage."
+  "Transaction\032k\n\013Transaction\022#\n\006symbol\030\001 \001"
+  "(\0162\023.exchange.StockType\022\r\n\005price\030\002 \001(\005\022\014"
+  "\n\004size\030\003 \001(\005\022\032\n\003dir\030\004 \001(\0162\r.exchange.Dir"
+  "\"\'\n\013MessageType\022\t\n\005HELLO\020\000\022\r\n\tADD_ORDER\020"
+  "\001**\n\tStockType\022\010\n\004BOND\020\000\022\t\n\005VALBS\020\001\022\010\n\004V"
+  "ALE\020\002*\030\n\003Dir\022\007\n\003BUY\020\000\022\010\n\004SELL\020\0012M\n\010Excha"
+  "nge\022A\n\007Message\022\027.exchange.ClientMessage\032"
+  "\027.exchange.ServerMessage\"\000(\0010\001b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_messages_2eproto_deps[1] = {
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_messages_2eproto_sccs[5] = {
-  &scc_info_Client_messages_2eproto.base,
-  &scc_info_Client_Transaction_messages_2eproto.base,
+  &scc_info_ClientMessage_messages_2eproto.base,
+  &scc_info_ClientMessage_Transaction_messages_2eproto.base,
   &scc_info_PriceAndSize_messages_2eproto.base,
-  &scc_info_Server_messages_2eproto.base,
-  &scc_info_Server_Position_messages_2eproto.base,
+  &scc_info_ServerMessage_messages_2eproto.base,
+  &scc_info_ServerMessage_Position_messages_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_messages_2eproto_once;
 static bool descriptor_table_messages_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_messages_2eproto = {
-  &descriptor_table_messages_2eproto_initialized, descriptor_table_protodef_messages_2eproto, "messages.proto", 669,
+  &descriptor_table_messages_2eproto_initialized, descriptor_table_protodef_messages_2eproto, "messages.proto", 798,
   &descriptor_table_messages_2eproto_once, descriptor_table_messages_2eproto_sccs, descriptor_table_messages_2eproto_deps, 5, 0,
   schemas, file_default_instances, TableStruct_messages_2eproto::offsets,
   file_level_metadata_messages_2eproto, 5, file_level_enum_descriptors_messages_2eproto, file_level_service_descriptors_messages_2eproto,
@@ -225,16 +215,16 @@ const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_messag
 // Force running AddDescriptors() at dynamic initialization time.
 static bool dynamic_init_dummy_messages_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_messages_2eproto), true);
 namespace exchange {
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Server_MessageType_descriptor() {
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ServerMessage_MessageType_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_messages_2eproto);
   return file_level_enum_descriptors_messages_2eproto[0];
 }
-bool Server_MessageType_IsValid(int value) {
+bool ServerMessage_MessageType_IsValid(int value) {
   switch (value) {
+    case 0:
     case 1:
     case 2:
     case 3:
-    case 4:
       return true;
     default:
       return false;
@@ -242,22 +232,22 @@ bool Server_MessageType_IsValid(int value) {
 }
 
 #if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
-constexpr Server_MessageType Server::HELLO;
-constexpr Server_MessageType Server::BOOK;
-constexpr Server_MessageType Server::FILL;
-constexpr Server_MessageType Server::REJECTED;
-constexpr Server_MessageType Server::MessageType_MIN;
-constexpr Server_MessageType Server::MessageType_MAX;
-constexpr int Server::MessageType_ARRAYSIZE;
+constexpr ServerMessage_MessageType ServerMessage::HELLO;
+constexpr ServerMessage_MessageType ServerMessage::BOOK;
+constexpr ServerMessage_MessageType ServerMessage::FILL;
+constexpr ServerMessage_MessageType ServerMessage::REJECTED;
+constexpr ServerMessage_MessageType ServerMessage::MessageType_MIN;
+constexpr ServerMessage_MessageType ServerMessage::MessageType_MAX;
+constexpr int ServerMessage::MessageType_ARRAYSIZE;
 #endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Client_MessageType_descriptor() {
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ClientMessage_MessageType_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_messages_2eproto);
   return file_level_enum_descriptors_messages_2eproto[1];
 }
-bool Client_MessageType_IsValid(int value) {
+bool ClientMessage_MessageType_IsValid(int value) {
   switch (value) {
+    case 0:
     case 1:
-    case 2:
       return true;
     default:
       return false;
@@ -265,11 +255,11 @@ bool Client_MessageType_IsValid(int value) {
 }
 
 #if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
-constexpr Client_MessageType Client::HELLO;
-constexpr Client_MessageType Client::ADD_ORDER;
-constexpr Client_MessageType Client::MessageType_MIN;
-constexpr Client_MessageType Client::MessageType_MAX;
-constexpr int Client::MessageType_ARRAYSIZE;
+constexpr ClientMessage_MessageType ClientMessage::HELLO;
+constexpr ClientMessage_MessageType ClientMessage::ADD_ORDER;
+constexpr ClientMessage_MessageType ClientMessage::MessageType_MIN;
+constexpr ClientMessage_MessageType ClientMessage::MessageType_MAX;
+constexpr int ClientMessage::MessageType_ARRAYSIZE;
 #endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* StockType_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_messages_2eproto);
@@ -277,9 +267,9 @@ const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* StockType_descriptor() {
 }
 bool StockType_IsValid(int value) {
   switch (value) {
+    case 0:
     case 1:
     case 2:
-    case 3:
       return true;
     default:
       return false;
@@ -292,8 +282,8 @@ const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Dir_descriptor() {
 }
 bool Dir_IsValid(int value) {
   switch (value) {
+    case 0:
     case 1:
-    case 2:
       return true;
     default:
       return false;
@@ -307,13 +297,6 @@ void PriceAndSize::InitAsDefaultInstance() {
 }
 class PriceAndSize::_Internal {
  public:
-  using HasBits = decltype(std::declval<PriceAndSize>()._has_bits_);
-  static void set_has_price(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
-  static void set_has_size(HasBits* has_bits) {
-    (*has_bits)[0] |= 2u;
-  }
 };
 
 PriceAndSize::PriceAndSize()
@@ -323,8 +306,7 @@ PriceAndSize::PriceAndSize()
 }
 PriceAndSize::PriceAndSize(const PriceAndSize& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
-      _has_bits_(from._has_bits_) {
+      _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::memcpy(&price_, &from.price_,
     static_cast<size_t>(reinterpret_cast<char*>(&size_) -
@@ -361,37 +343,30 @@ void PriceAndSize::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x00000003u) {
-    ::memset(&price_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&size_) -
-        reinterpret_cast<char*>(&price_)) + sizeof(size_));
-  }
-  _has_bits_.Clear();
+  ::memset(&price_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&size_) -
+      reinterpret_cast<char*>(&price_)) + sizeof(size_));
   _internal_metadata_.Clear();
 }
 
 #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 const char* PriceAndSize::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // required int32 price = 1;
+      // int32 price = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          _Internal::set_has_price(&has_bits);
           price_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // required int32 size = 2;
+      // int32 size = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          _Internal::set_has_size(&has_bits);
           size_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -409,7 +384,6 @@ const char* PriceAndSize::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
     }  // switch
   }  // while
 success:
-  _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
@@ -427,10 +401,10 @@ bool PriceAndSize::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required int32 price = 1;
+      // int32 price = 1;
       case 1: {
         if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (8 & 0xFF)) {
-          _Internal::set_has_price(&_has_bits_);
+
           DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
                    ::PROTOBUF_NAMESPACE_ID::int32, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_INT32>(
                  input, &price_)));
@@ -440,10 +414,10 @@ bool PriceAndSize::MergePartialFromCodedStream(
         break;
       }
 
-      // required int32 size = 2;
+      // int32 size = 2;
       case 2: {
         if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (16 & 0xFF)) {
-          _Internal::set_has_size(&_has_bits_);
+
           DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
                    ::PROTOBUF_NAMESPACE_ID::int32, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_INT32>(
                  input, &size_)));
@@ -480,15 +454,14 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  // required int32 price = 1;
-  if (cached_has_bits & 0x00000001u) {
+  // int32 price = 1;
+  if (this->price() != 0) {
     stream->EnsureSpace(&target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->price(), target);
   }
 
-  // required int32 size = 2;
-  if (cached_has_bits & 0x00000002u) {
+  // int32 size = 2;
+  if (this->size() != 0) {
     stream->EnsureSpace(&target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->size(), target);
   }
@@ -501,47 +474,27 @@ failure:
   return target;
 }
 
-size_t PriceAndSize::RequiredFieldsByteSizeFallback() const {
-// @@protoc_insertion_point(required_fields_byte_size_fallback_start:exchange.PriceAndSize)
-  size_t total_size = 0;
-
-  if (has_price()) {
-    // required int32 price = 1;
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->price());
-  }
-
-  if (has_size()) {
-    // required int32 size = 2;
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->size());
-  }
-
-  return total_size;
-}
 size_t PriceAndSize::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:exchange.PriceAndSize)
   size_t total_size = 0;
 
-  if (((_has_bits_[0] & 0x00000003) ^ 0x00000003) == 0) {  // All required fields are present.
-    // required int32 price = 1;
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->price());
-
-    // required int32 size = 2;
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->size());
-
-  } else {
-    total_size += RequiredFieldsByteSizeFallback();
-  }
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 price = 1;
+  if (this->price() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->price());
+  }
+
+  // int32 size = 2;
+  if (this->size() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->size());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -574,15 +527,11 @@ void PriceAndSize::MergeFrom(const PriceAndSize& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 0x00000003u) {
-    if (cached_has_bits & 0x00000001u) {
-      price_ = from.price_;
-    }
-    if (cached_has_bits & 0x00000002u) {
-      size_ = from.size_;
-    }
-    _has_bits_[0] |= cached_has_bits;
+  if (from.price() != 0) {
+    set_price(from.price());
+  }
+  if (from.size() != 0) {
+    set_size(from.size());
   }
 }
 
@@ -601,14 +550,12 @@ void PriceAndSize::CopyFrom(const PriceAndSize& from) {
 }
 
 bool PriceAndSize::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
   return true;
 }
 
 void PriceAndSize::InternalSwap(PriceAndSize* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
   swap(price_, other->price_);
   swap(size_, other->size_);
 }
@@ -620,86 +567,75 @@ void PriceAndSize::InternalSwap(PriceAndSize* other) {
 
 // ===================================================================
 
-void Server_Position::InitAsDefaultInstance() {
+void ServerMessage_Position::InitAsDefaultInstance() {
 }
-class Server_Position::_Internal {
+class ServerMessage_Position::_Internal {
  public:
-  using HasBits = decltype(std::declval<Server_Position>()._has_bits_);
-  static void set_has_symbol(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
 };
 
-Server_Position::Server_Position()
+ServerMessage_Position::ServerMessage_Position()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:exchange.Server.Position)
+  // @@protoc_insertion_point(constructor:exchange.ServerMessage.Position)
 }
-Server_Position::Server_Position(const Server_Position& from)
+ServerMessage_Position::ServerMessage_Position(const ServerMessage_Position& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr),
-      _has_bits_(from._has_bits_),
       buy_(from.buy_),
       sell_(from.sell_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   symbol_ = from.symbol_;
-  // @@protoc_insertion_point(copy_constructor:exchange.Server.Position)
+  // @@protoc_insertion_point(copy_constructor:exchange.ServerMessage.Position)
 }
 
-void Server_Position::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Server_Position_messages_2eproto.base);
-  symbol_ = 1;
+void ServerMessage_Position::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ServerMessage_Position_messages_2eproto.base);
+  symbol_ = 0;
 }
 
-Server_Position::~Server_Position() {
-  // @@protoc_insertion_point(destructor:exchange.Server.Position)
+ServerMessage_Position::~ServerMessage_Position() {
+  // @@protoc_insertion_point(destructor:exchange.ServerMessage.Position)
   SharedDtor();
 }
 
-void Server_Position::SharedDtor() {
+void ServerMessage_Position::SharedDtor() {
 }
 
-void Server_Position::SetCachedSize(int size) const {
+void ServerMessage_Position::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Server_Position& Server_Position::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Server_Position_messages_2eproto.base);
+const ServerMessage_Position& ServerMessage_Position::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ServerMessage_Position_messages_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void Server_Position::Clear() {
-// @@protoc_insertion_point(message_clear_start:exchange.Server.Position)
+void ServerMessage_Position::Clear() {
+// @@protoc_insertion_point(message_clear_start:exchange.ServerMessage.Position)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   buy_.Clear();
   sell_.Clear();
-  symbol_ = 1;
-  _has_bits_.Clear();
+  symbol_ = 0;
   _internal_metadata_.Clear();
 }
 
 #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* Server_Position::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* ServerMessage_Position::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // required .exchange.StockType symbol = 1;
+      // .exchange.StockType symbol = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
-          if (PROTOBUF_PREDICT_TRUE(::exchange::StockType_IsValid(val))) {
-            set_symbol(static_cast<::exchange::StockType>(val));
-          } else {
-            ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(1, val, mutable_unknown_fields());
-          }
+          set_symbol(static_cast<::exchange::StockType>(val));
         } else goto handle_unusual;
         continue;
       // repeated .exchange.PriceAndSize buy = 2;
@@ -739,7 +675,6 @@ const char* Server_Position::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
     }  // switch
   }  // while
 success:
-  _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
@@ -747,29 +682,24 @@ failure:
 #undef CHK_
 }
 #else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool Server_Position::MergePartialFromCodedStream(
+bool ServerMessage_Position::MergePartialFromCodedStream(
     ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-  // @@protoc_insertion_point(parse_start:exchange.Server.Position)
+  // @@protoc_insertion_point(parse_start:exchange.ServerMessage.Position)
   for (;;) {
     ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required .exchange.StockType symbol = 1;
+      // .exchange.StockType symbol = 1;
       case 1: {
         if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (8 & 0xFF)) {
           int value = 0;
           DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
                    int, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_ENUM>(
                  input, &value)));
-          if (::exchange::StockType_IsValid(value)) {
-            set_symbol(static_cast< ::exchange::StockType >(value));
-          } else {
-            mutable_unknown_fields()->AddVarint(
-                1, static_cast<::PROTOBUF_NAMESPACE_ID::uint64>(value));
-          }
+          set_symbol(static_cast< ::exchange::StockType >(value));
         } else {
           goto handle_unusual;
         }
@@ -810,24 +740,23 @@ bool Server_Position::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:exchange.Server.Position)
+  // @@protoc_insertion_point(parse_success:exchange.ServerMessage.Position)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:exchange.Server.Position)
+  // @@protoc_insertion_point(parse_failure:exchange.ServerMessage.Position)
   return false;
 #undef DO_
 }
 #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
-::PROTOBUF_NAMESPACE_ID::uint8* Server_Position::InternalSerializeWithCachedSizesToArray(
+::PROTOBUF_NAMESPACE_ID::uint8* ServerMessage_Position::InternalSerializeWithCachedSizesToArray(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:exchange.Server.Position)
+  // @@protoc_insertion_point(serialize_to_array_start:exchange.ServerMessage.Position)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  // required .exchange.StockType symbol = 1;
-  if (cached_has_bits & 0x00000001u) {
+  // .exchange.StockType symbol = 1;
+  if (this->symbol() != 0) {
     stream->EnsureSpace(&target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
       1, this->symbol(), target);
@@ -853,19 +782,14 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:exchange.Server.Position)
+  // @@protoc_insertion_point(serialize_to_array_end:exchange.ServerMessage.Position)
   return target;
 }
 
-size_t Server_Position::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:exchange.Server.Position)
+size_t ServerMessage_Position::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:exchange.ServerMessage.Position)
   size_t total_size = 0;
 
-  // required .exchange.StockType symbol = 1;
-  if (has_symbol()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->symbol());
-  }
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -884,6 +808,12 @@ size_t Server_Position::ByteSizeLong() const {
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
+  // .exchange.StockType symbol = 1;
+  if (this->symbol() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->symbol());
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -893,23 +823,23 @@ size_t Server_Position::ByteSizeLong() const {
   return total_size;
 }
 
-void Server_Position::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:exchange.Server.Position)
+void ServerMessage_Position::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:exchange.ServerMessage.Position)
   GOOGLE_DCHECK_NE(&from, this);
-  const Server_Position* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Server_Position>(
+  const ServerMessage_Position* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ServerMessage_Position>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:exchange.Server.Position)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:exchange.ServerMessage.Position)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:exchange.Server.Position)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:exchange.ServerMessage.Position)
     MergeFrom(*source);
   }
 }
 
-void Server_Position::MergeFrom(const Server_Position& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:exchange.Server.Position)
+void ServerMessage_Position::MergeFrom(const ServerMessage_Position& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:exchange.ServerMessage.Position)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -917,151 +847,131 @@ void Server_Position::MergeFrom(const Server_Position& from) {
 
   buy_.MergeFrom(from.buy_);
   sell_.MergeFrom(from.sell_);
-  if (from.has_symbol()) {
+  if (from.symbol() != 0) {
     set_symbol(from.symbol());
   }
 }
 
-void Server_Position::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:exchange.Server.Position)
+void ServerMessage_Position::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:exchange.ServerMessage.Position)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void Server_Position::CopyFrom(const Server_Position& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:exchange.Server.Position)
+void ServerMessage_Position::CopyFrom(const ServerMessage_Position& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:exchange.ServerMessage.Position)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool Server_Position::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
-  if (!::PROTOBUF_NAMESPACE_ID::internal::AllAreInitialized(this->buy())) return false;
-  if (!::PROTOBUF_NAMESPACE_ID::internal::AllAreInitialized(this->sell())) return false;
+bool ServerMessage_Position::IsInitialized() const {
   return true;
 }
 
-void Server_Position::InternalSwap(Server_Position* other) {
+void ServerMessage_Position::InternalSwap(ServerMessage_Position* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
   buy_.InternalSwap(&other->buy_);
   sell_.InternalSwap(&other->sell_);
   swap(symbol_, other->symbol_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata Server_Position::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata ServerMessage_Position::GetMetadata() const {
   return GetMetadataStatic();
 }
 
 
 // ===================================================================
 
-void Server::InitAsDefaultInstance() {
-  ::exchange::_Server_default_instance_._instance.get_mutable()->book_ = const_cast< ::exchange::Server_Position*>(
-      ::exchange::Server_Position::internal_default_instance());
+void ServerMessage::InitAsDefaultInstance() {
+  ::exchange::_ServerMessage_default_instance_._instance.get_mutable()->book_ = const_cast< ::exchange::ServerMessage_Position*>(
+      ::exchange::ServerMessage_Position::internal_default_instance());
 }
-class Server::_Internal {
+class ServerMessage::_Internal {
  public:
-  using HasBits = decltype(std::declval<Server>()._has_bits_);
-  static void set_has_t(HasBits* has_bits) {
-    (*has_bits)[0] |= 2u;
-  }
-  static const ::exchange::Server_Position& book(const Server* msg);
-  static void set_has_book(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
+  static const ::exchange::ServerMessage_Position& book(const ServerMessage* msg);
 };
 
-const ::exchange::Server_Position&
-Server::_Internal::book(const Server* msg) {
+const ::exchange::ServerMessage_Position&
+ServerMessage::_Internal::book(const ServerMessage* msg) {
   return *msg->book_;
 }
-Server::Server()
+ServerMessage::ServerMessage()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:exchange.Server)
+  // @@protoc_insertion_point(constructor:exchange.ServerMessage)
 }
-Server::Server(const Server& from)
+ServerMessage::ServerMessage(const ServerMessage& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
-      _has_bits_(from._has_bits_) {
+      _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   if (from.has_book()) {
-    book_ = new ::exchange::Server_Position(*from.book_);
+    book_ = new ::exchange::ServerMessage_Position(*from.book_);
   } else {
     book_ = nullptr;
   }
   t_ = from.t_;
-  // @@protoc_insertion_point(copy_constructor:exchange.Server)
+  // @@protoc_insertion_point(copy_constructor:exchange.ServerMessage)
 }
 
-void Server::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Server_messages_2eproto.base);
-  book_ = nullptr;
-  t_ = 1;
+void ServerMessage::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ServerMessage_messages_2eproto.base);
+  ::memset(&book_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&t_) -
+      reinterpret_cast<char*>(&book_)) + sizeof(t_));
 }
 
-Server::~Server() {
-  // @@protoc_insertion_point(destructor:exchange.Server)
+ServerMessage::~ServerMessage() {
+  // @@protoc_insertion_point(destructor:exchange.ServerMessage)
   SharedDtor();
 }
 
-void Server::SharedDtor() {
+void ServerMessage::SharedDtor() {
   if (this != internal_default_instance()) delete book_;
 }
 
-void Server::SetCachedSize(int size) const {
+void ServerMessage::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Server& Server::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Server_messages_2eproto.base);
+const ServerMessage& ServerMessage::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ServerMessage_messages_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void Server::Clear() {
-// @@protoc_insertion_point(message_clear_start:exchange.Server)
+void ServerMessage::Clear() {
+// @@protoc_insertion_point(message_clear_start:exchange.ServerMessage)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x00000003u) {
-    if (cached_has_bits & 0x00000001u) {
-      GOOGLE_DCHECK(book_ != nullptr);
-      book_->Clear();
-    }
-    t_ = 1;
+  if (GetArenaNoVirtual() == nullptr && book_ != nullptr) {
+    delete book_;
   }
-  _has_bits_.Clear();
+  book_ = nullptr;
+  t_ = 0;
   _internal_metadata_.Clear();
 }
 
 #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* Server::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* ServerMessage::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // required .exchange.Server.MessageType t = 1;
+      // .exchange.ServerMessage.MessageType t = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
-          if (PROTOBUF_PREDICT_TRUE(::exchange::Server_MessageType_IsValid(val))) {
-            set_t(static_cast<::exchange::Server_MessageType>(val));
-          } else {
-            ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(1, val, mutable_unknown_fields());
-          }
+          set_t(static_cast<::exchange::ServerMessage_MessageType>(val));
         } else goto handle_unusual;
         continue;
-      // optional .exchange.Server.Position book = 2;
+      // .exchange.ServerMessage.Position book = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(mutable_book(), ptr);
@@ -1081,7 +991,6 @@ const char* Server::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
     }  // switch
   }  // while
 success:
-  _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
@@ -1089,36 +998,31 @@ failure:
 #undef CHK_
 }
 #else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool Server::MergePartialFromCodedStream(
+bool ServerMessage::MergePartialFromCodedStream(
     ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-  // @@protoc_insertion_point(parse_start:exchange.Server)
+  // @@protoc_insertion_point(parse_start:exchange.ServerMessage)
   for (;;) {
     ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required .exchange.Server.MessageType t = 1;
+      // .exchange.ServerMessage.MessageType t = 1;
       case 1: {
         if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (8 & 0xFF)) {
           int value = 0;
           DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
                    int, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_ENUM>(
                  input, &value)));
-          if (::exchange::Server_MessageType_IsValid(value)) {
-            set_t(static_cast< ::exchange::Server_MessageType >(value));
-          } else {
-            mutable_unknown_fields()->AddVarint(
-                1, static_cast<::PROTOBUF_NAMESPACE_ID::uint64>(value));
-          }
+          set_t(static_cast< ::exchange::ServerMessage_MessageType >(value));
         } else {
           goto handle_unusual;
         }
         break;
       }
 
-      // optional .exchange.Server.Position book = 2;
+      // .exchange.ServerMessage.Position book = 2;
       case 2: {
         if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (18 & 0xFF)) {
           DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadMessage(
@@ -1141,31 +1045,30 @@ bool Server::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:exchange.Server)
+  // @@protoc_insertion_point(parse_success:exchange.ServerMessage)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:exchange.Server)
+  // @@protoc_insertion_point(parse_failure:exchange.ServerMessage)
   return false;
 #undef DO_
 }
 #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
-::PROTOBUF_NAMESPACE_ID::uint8* Server::InternalSerializeWithCachedSizesToArray(
+::PROTOBUF_NAMESPACE_ID::uint8* ServerMessage::InternalSerializeWithCachedSizesToArray(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:exchange.Server)
+  // @@protoc_insertion_point(serialize_to_array_start:exchange.ServerMessage)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  // required .exchange.Server.MessageType t = 1;
-  if (cached_has_bits & 0x00000002u) {
+  // .exchange.ServerMessage.MessageType t = 1;
+  if (this->t() != 0) {
     stream->EnsureSpace(&target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
       1, this->t(), target);
   }
 
-  // optional .exchange.Server.Position book = 2;
-  if (cached_has_bits & 0x00000001u) {
+  // .exchange.ServerMessage.Position book = 2;
+  if (this->has_book()) {
     stream->EnsureSpace(&target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessageToArray(
@@ -1176,29 +1079,29 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:exchange.Server)
+  // @@protoc_insertion_point(serialize_to_array_end:exchange.ServerMessage)
   return target;
 }
 
-size_t Server::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:exchange.Server)
+size_t ServerMessage::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:exchange.ServerMessage)
   size_t total_size = 0;
 
-  // required .exchange.Server.MessageType t = 1;
-  if (has_t()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->t());
-  }
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // optional .exchange.Server.Position book = 2;
-  cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x00000001u) {
+  // .exchange.ServerMessage.Position book = 2;
+  if (this->has_book()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *book_);
+  }
+
+  // .exchange.ServerMessage.MessageType t = 1;
+  if (this->t() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->t());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1210,202 +1113,160 @@ size_t Server::ByteSizeLong() const {
   return total_size;
 }
 
-void Server::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:exchange.Server)
+void ServerMessage::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:exchange.ServerMessage)
   GOOGLE_DCHECK_NE(&from, this);
-  const Server* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Server>(
+  const ServerMessage* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ServerMessage>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:exchange.Server)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:exchange.ServerMessage)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:exchange.Server)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:exchange.ServerMessage)
     MergeFrom(*source);
   }
 }
 
-void Server::MergeFrom(const Server& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:exchange.Server)
+void ServerMessage::MergeFrom(const ServerMessage& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:exchange.ServerMessage)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 0x00000003u) {
-    if (cached_has_bits & 0x00000001u) {
-      mutable_book()->::exchange::Server_Position::MergeFrom(from.book());
-    }
-    if (cached_has_bits & 0x00000002u) {
-      t_ = from.t_;
-    }
-    _has_bits_[0] |= cached_has_bits;
+  if (from.has_book()) {
+    mutable_book()->::exchange::ServerMessage_Position::MergeFrom(from.book());
+  }
+  if (from.t() != 0) {
+    set_t(from.t());
   }
 }
 
-void Server::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:exchange.Server)
+void ServerMessage::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:exchange.ServerMessage)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void Server::CopyFrom(const Server& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:exchange.Server)
+void ServerMessage::CopyFrom(const ServerMessage& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:exchange.ServerMessage)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool Server::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000002) != 0x00000002) return false;
-  if (has_book()) {
-    if (!this->book_->IsInitialized()) return false;
-  }
+bool ServerMessage::IsInitialized() const {
   return true;
 }
 
-void Server::InternalSwap(Server* other) {
+void ServerMessage::InternalSwap(ServerMessage* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
   swap(book_, other->book_);
   swap(t_, other->t_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata Server::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata ServerMessage::GetMetadata() const {
   return GetMetadataStatic();
 }
 
 
 // ===================================================================
 
-void Client_Transaction::InitAsDefaultInstance() {
+void ClientMessage_Transaction::InitAsDefaultInstance() {
 }
-class Client_Transaction::_Internal {
+class ClientMessage_Transaction::_Internal {
  public:
-  using HasBits = decltype(std::declval<Client_Transaction>()._has_bits_);
-  static void set_has_symbol(HasBits* has_bits) {
-    (*has_bits)[0] |= 4u;
-  }
-  static void set_has_price(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
-  static void set_has_size(HasBits* has_bits) {
-    (*has_bits)[0] |= 2u;
-  }
-  static void set_has_dir(HasBits* has_bits) {
-    (*has_bits)[0] |= 8u;
-  }
 };
 
-Client_Transaction::Client_Transaction()
+ClientMessage_Transaction::ClientMessage_Transaction()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:exchange.Client.Transaction)
+  // @@protoc_insertion_point(constructor:exchange.ClientMessage.Transaction)
 }
-Client_Transaction::Client_Transaction(const Client_Transaction& from)
+ClientMessage_Transaction::ClientMessage_Transaction(const ClientMessage_Transaction& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
-      _has_bits_(from._has_bits_) {
+      _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::memcpy(&price_, &from.price_,
+  ::memcpy(&symbol_, &from.symbol_,
     static_cast<size_t>(reinterpret_cast<char*>(&dir_) -
-    reinterpret_cast<char*>(&price_)) + sizeof(dir_));
-  // @@protoc_insertion_point(copy_constructor:exchange.Client.Transaction)
+    reinterpret_cast<char*>(&symbol_)) + sizeof(dir_));
+  // @@protoc_insertion_point(copy_constructor:exchange.ClientMessage.Transaction)
 }
 
-void Client_Transaction::SharedCtor() {
-  ::memset(&price_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&size_) -
-      reinterpret_cast<char*>(&price_)) + sizeof(size_));
-  symbol_ = 1;
-  dir_ = 1;
+void ClientMessage_Transaction::SharedCtor() {
+  ::memset(&symbol_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&dir_) -
+      reinterpret_cast<char*>(&symbol_)) + sizeof(dir_));
 }
 
-Client_Transaction::~Client_Transaction() {
-  // @@protoc_insertion_point(destructor:exchange.Client.Transaction)
+ClientMessage_Transaction::~ClientMessage_Transaction() {
+  // @@protoc_insertion_point(destructor:exchange.ClientMessage.Transaction)
   SharedDtor();
 }
 
-void Client_Transaction::SharedDtor() {
+void ClientMessage_Transaction::SharedDtor() {
 }
 
-void Client_Transaction::SetCachedSize(int size) const {
+void ClientMessage_Transaction::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Client_Transaction& Client_Transaction::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Client_Transaction_messages_2eproto.base);
+const ClientMessage_Transaction& ClientMessage_Transaction::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ClientMessage_Transaction_messages_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void Client_Transaction::Clear() {
-// @@protoc_insertion_point(message_clear_start:exchange.Client.Transaction)
+void ClientMessage_Transaction::Clear() {
+// @@protoc_insertion_point(message_clear_start:exchange.ClientMessage.Transaction)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x0000000fu) {
-    ::memset(&price_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&size_) -
-        reinterpret_cast<char*>(&price_)) + sizeof(size_));
-    symbol_ = 1;
-    dir_ = 1;
-  }
-  _has_bits_.Clear();
+  ::memset(&symbol_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&dir_) -
+      reinterpret_cast<char*>(&symbol_)) + sizeof(dir_));
   _internal_metadata_.Clear();
 }
 
 #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* Client_Transaction::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* ClientMessage_Transaction::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // required .exchange.StockType symbol = 1;
+      // .exchange.StockType symbol = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
-          if (PROTOBUF_PREDICT_TRUE(::exchange::StockType_IsValid(val))) {
-            set_symbol(static_cast<::exchange::StockType>(val));
-          } else {
-            ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(1, val, mutable_unknown_fields());
-          }
+          set_symbol(static_cast<::exchange::StockType>(val));
         } else goto handle_unusual;
         continue;
-      // required int32 price = 2;
+      // int32 price = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          _Internal::set_has_price(&has_bits);
           price_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // required int32 size = 3;
+      // int32 size = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          _Internal::set_has_size(&has_bits);
           size_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // required .exchange.Dir dir = 4;
+      // .exchange.Dir dir = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
-          if (PROTOBUF_PREDICT_TRUE(::exchange::Dir_IsValid(val))) {
-            set_dir(static_cast<::exchange::Dir>(val));
-          } else {
-            ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(4, val, mutable_unknown_fields());
-          }
+          set_dir(static_cast<::exchange::Dir>(val));
         } else goto handle_unusual;
         continue;
       default: {
@@ -1421,7 +1282,6 @@ const char* Client_Transaction::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
     }  // switch
   }  // while
 success:
-  _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
@@ -1429,39 +1289,34 @@ failure:
 #undef CHK_
 }
 #else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool Client_Transaction::MergePartialFromCodedStream(
+bool ClientMessage_Transaction::MergePartialFromCodedStream(
     ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-  // @@protoc_insertion_point(parse_start:exchange.Client.Transaction)
+  // @@protoc_insertion_point(parse_start:exchange.ClientMessage.Transaction)
   for (;;) {
     ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required .exchange.StockType symbol = 1;
+      // .exchange.StockType symbol = 1;
       case 1: {
         if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (8 & 0xFF)) {
           int value = 0;
           DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
                    int, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_ENUM>(
                  input, &value)));
-          if (::exchange::StockType_IsValid(value)) {
-            set_symbol(static_cast< ::exchange::StockType >(value));
-          } else {
-            mutable_unknown_fields()->AddVarint(
-                1, static_cast<::PROTOBUF_NAMESPACE_ID::uint64>(value));
-          }
+          set_symbol(static_cast< ::exchange::StockType >(value));
         } else {
           goto handle_unusual;
         }
         break;
       }
 
-      // required int32 price = 2;
+      // int32 price = 2;
       case 2: {
         if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (16 & 0xFF)) {
-          _Internal::set_has_price(&_has_bits_);
+
           DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
                    ::PROTOBUF_NAMESPACE_ID::int32, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_INT32>(
                  input, &price_)));
@@ -1471,10 +1326,10 @@ bool Client_Transaction::MergePartialFromCodedStream(
         break;
       }
 
-      // required int32 size = 3;
+      // int32 size = 3;
       case 3: {
         if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (24 & 0xFF)) {
-          _Internal::set_has_size(&_has_bits_);
+
           DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
                    ::PROTOBUF_NAMESPACE_ID::int32, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_INT32>(
                  input, &size_)));
@@ -1484,19 +1339,14 @@ bool Client_Transaction::MergePartialFromCodedStream(
         break;
       }
 
-      // required .exchange.Dir dir = 4;
+      // .exchange.Dir dir = 4;
       case 4: {
         if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (32 & 0xFF)) {
           int value = 0;
           DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
                    int, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_ENUM>(
                  input, &value)));
-          if (::exchange::Dir_IsValid(value)) {
-            set_dir(static_cast< ::exchange::Dir >(value));
-          } else {
-            mutable_unknown_fields()->AddVarint(
-                4, static_cast<::PROTOBUF_NAMESPACE_ID::uint64>(value));
-          }
+          set_dir(static_cast< ::exchange::Dir >(value));
         } else {
           goto handle_unusual;
         }
@@ -1515,43 +1365,42 @@ bool Client_Transaction::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:exchange.Client.Transaction)
+  // @@protoc_insertion_point(parse_success:exchange.ClientMessage.Transaction)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:exchange.Client.Transaction)
+  // @@protoc_insertion_point(parse_failure:exchange.ClientMessage.Transaction)
   return false;
 #undef DO_
 }
 #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
-::PROTOBUF_NAMESPACE_ID::uint8* Client_Transaction::InternalSerializeWithCachedSizesToArray(
+::PROTOBUF_NAMESPACE_ID::uint8* ClientMessage_Transaction::InternalSerializeWithCachedSizesToArray(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:exchange.Client.Transaction)
+  // @@protoc_insertion_point(serialize_to_array_start:exchange.ClientMessage.Transaction)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  // required .exchange.StockType symbol = 1;
-  if (cached_has_bits & 0x00000004u) {
+  // .exchange.StockType symbol = 1;
+  if (this->symbol() != 0) {
     stream->EnsureSpace(&target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
       1, this->symbol(), target);
   }
 
-  // required int32 price = 2;
-  if (cached_has_bits & 0x00000001u) {
+  // int32 price = 2;
+  if (this->price() != 0) {
     stream->EnsureSpace(&target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->price(), target);
   }
 
-  // required int32 size = 3;
-  if (cached_has_bits & 0x00000002u) {
+  // int32 size = 3;
+  if (this->size() != 0) {
     stream->EnsureSpace(&target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(3, this->size(), target);
   }
 
-  // required .exchange.Dir dir = 4;
-  if (cached_has_bits & 0x00000008u) {
+  // .exchange.Dir dir = 4;
+  if (this->dir() != 0) {
     stream->EnsureSpace(&target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
       4, this->dir(), target);
@@ -1561,71 +1410,43 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:exchange.Client.Transaction)
+  // @@protoc_insertion_point(serialize_to_array_end:exchange.ClientMessage.Transaction)
   return target;
 }
 
-size_t Client_Transaction::RequiredFieldsByteSizeFallback() const {
-// @@protoc_insertion_point(required_fields_byte_size_fallback_start:exchange.Client.Transaction)
+size_t ClientMessage_Transaction::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:exchange.ClientMessage.Transaction)
   size_t total_size = 0;
 
-  if (has_price()) {
-    // required int32 price = 2;
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->price());
-  }
-
-  if (has_size()) {
-    // required int32 size = 3;
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->size());
-  }
-
-  if (has_symbol()) {
-    // required .exchange.StockType symbol = 1;
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->symbol());
-  }
-
-  if (has_dir()) {
-    // required .exchange.Dir dir = 4;
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->dir());
-  }
-
-  return total_size;
-}
-size_t Client_Transaction::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:exchange.Client.Transaction)
-  size_t total_size = 0;
-
-  if (((_has_bits_[0] & 0x0000000f) ^ 0x0000000f) == 0) {  // All required fields are present.
-    // required int32 price = 2;
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->price());
-
-    // required int32 size = 3;
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->size());
-
-    // required .exchange.StockType symbol = 1;
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->symbol());
-
-    // required .exchange.Dir dir = 4;
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->dir());
-
-  } else {
-    total_size += RequiredFieldsByteSizeFallback();
-  }
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // .exchange.StockType symbol = 1;
+  if (this->symbol() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->symbol());
+  }
+
+  // int32 price = 2;
+  if (this->price() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->price());
+  }
+
+  // int32 size = 3;
+  if (this->size() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->size());
+  }
+
+  // .exchange.Dir dir = 4;
+  if (this->dir() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->dir());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -1636,185 +1457,163 @@ size_t Client_Transaction::ByteSizeLong() const {
   return total_size;
 }
 
-void Client_Transaction::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:exchange.Client.Transaction)
+void ClientMessage_Transaction::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:exchange.ClientMessage.Transaction)
   GOOGLE_DCHECK_NE(&from, this);
-  const Client_Transaction* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Client_Transaction>(
+  const ClientMessage_Transaction* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ClientMessage_Transaction>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:exchange.Client.Transaction)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:exchange.ClientMessage.Transaction)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:exchange.Client.Transaction)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:exchange.ClientMessage.Transaction)
     MergeFrom(*source);
   }
 }
 
-void Client_Transaction::MergeFrom(const Client_Transaction& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:exchange.Client.Transaction)
+void ClientMessage_Transaction::MergeFrom(const ClientMessage_Transaction& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:exchange.ClientMessage.Transaction)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 0x0000000fu) {
-    if (cached_has_bits & 0x00000001u) {
-      price_ = from.price_;
-    }
-    if (cached_has_bits & 0x00000002u) {
-      size_ = from.size_;
-    }
-    if (cached_has_bits & 0x00000004u) {
-      symbol_ = from.symbol_;
-    }
-    if (cached_has_bits & 0x00000008u) {
-      dir_ = from.dir_;
-    }
-    _has_bits_[0] |= cached_has_bits;
+  if (from.symbol() != 0) {
+    set_symbol(from.symbol());
+  }
+  if (from.price() != 0) {
+    set_price(from.price());
+  }
+  if (from.size() != 0) {
+    set_size(from.size());
+  }
+  if (from.dir() != 0) {
+    set_dir(from.dir());
   }
 }
 
-void Client_Transaction::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:exchange.Client.Transaction)
+void ClientMessage_Transaction::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:exchange.ClientMessage.Transaction)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void Client_Transaction::CopyFrom(const Client_Transaction& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:exchange.Client.Transaction)
+void ClientMessage_Transaction::CopyFrom(const ClientMessage_Transaction& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:exchange.ClientMessage.Transaction)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool Client_Transaction::IsInitialized() const {
-  if ((_has_bits_[0] & 0x0000000f) != 0x0000000f) return false;
+bool ClientMessage_Transaction::IsInitialized() const {
   return true;
 }
 
-void Client_Transaction::InternalSwap(Client_Transaction* other) {
+void ClientMessage_Transaction::InternalSwap(ClientMessage_Transaction* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
+  swap(symbol_, other->symbol_);
   swap(price_, other->price_);
   swap(size_, other->size_);
-  swap(symbol_, other->symbol_);
   swap(dir_, other->dir_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata Client_Transaction::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata ClientMessage_Transaction::GetMetadata() const {
   return GetMetadataStatic();
 }
 
 
 // ===================================================================
 
-void Client::InitAsDefaultInstance() {
-  ::exchange::_Client_default_instance_._instance.get_mutable()->add_order_ = const_cast< ::exchange::Client_Transaction*>(
-      ::exchange::Client_Transaction::internal_default_instance());
+void ClientMessage::InitAsDefaultInstance() {
+  ::exchange::_ClientMessage_default_instance_._instance.get_mutable()->add_order_ = const_cast< ::exchange::ClientMessage_Transaction*>(
+      ::exchange::ClientMessage_Transaction::internal_default_instance());
 }
-class Client::_Internal {
+class ClientMessage::_Internal {
  public:
-  using HasBits = decltype(std::declval<Client>()._has_bits_);
-  static void set_has_t(HasBits* has_bits) {
-    (*has_bits)[0] |= 2u;
-  }
-  static const ::exchange::Client_Transaction& add_order(const Client* msg);
-  static void set_has_add_order(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
+  static const ::exchange::ClientMessage_Transaction& add_order(const ClientMessage* msg);
 };
 
-const ::exchange::Client_Transaction&
-Client::_Internal::add_order(const Client* msg) {
+const ::exchange::ClientMessage_Transaction&
+ClientMessage::_Internal::add_order(const ClientMessage* msg) {
   return *msg->add_order_;
 }
-Client::Client()
+ClientMessage::ClientMessage()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:exchange.Client)
+  // @@protoc_insertion_point(constructor:exchange.ClientMessage)
 }
-Client::Client(const Client& from)
+ClientMessage::ClientMessage(const ClientMessage& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
-      _has_bits_(from._has_bits_) {
+      _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   if (from.has_add_order()) {
-    add_order_ = new ::exchange::Client_Transaction(*from.add_order_);
+    add_order_ = new ::exchange::ClientMessage_Transaction(*from.add_order_);
   } else {
     add_order_ = nullptr;
   }
   t_ = from.t_;
-  // @@protoc_insertion_point(copy_constructor:exchange.Client)
+  // @@protoc_insertion_point(copy_constructor:exchange.ClientMessage)
 }
 
-void Client::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Client_messages_2eproto.base);
-  add_order_ = nullptr;
-  t_ = 1;
+void ClientMessage::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ClientMessage_messages_2eproto.base);
+  ::memset(&add_order_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&t_) -
+      reinterpret_cast<char*>(&add_order_)) + sizeof(t_));
 }
 
-Client::~Client() {
-  // @@protoc_insertion_point(destructor:exchange.Client)
+ClientMessage::~ClientMessage() {
+  // @@protoc_insertion_point(destructor:exchange.ClientMessage)
   SharedDtor();
 }
 
-void Client::SharedDtor() {
+void ClientMessage::SharedDtor() {
   if (this != internal_default_instance()) delete add_order_;
 }
 
-void Client::SetCachedSize(int size) const {
+void ClientMessage::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Client& Client::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Client_messages_2eproto.base);
+const ClientMessage& ClientMessage::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ClientMessage_messages_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void Client::Clear() {
-// @@protoc_insertion_point(message_clear_start:exchange.Client)
+void ClientMessage::Clear() {
+// @@protoc_insertion_point(message_clear_start:exchange.ClientMessage)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x00000003u) {
-    if (cached_has_bits & 0x00000001u) {
-      GOOGLE_DCHECK(add_order_ != nullptr);
-      add_order_->Clear();
-    }
-    t_ = 1;
+  if (GetArenaNoVirtual() == nullptr && add_order_ != nullptr) {
+    delete add_order_;
   }
-  _has_bits_.Clear();
+  add_order_ = nullptr;
+  t_ = 0;
   _internal_metadata_.Clear();
 }
 
 #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* Client::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* ClientMessage::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // required .exchange.Client.MessageType t = 1;
+      // .exchange.ClientMessage.MessageType t = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
-          if (PROTOBUF_PREDICT_TRUE(::exchange::Client_MessageType_IsValid(val))) {
-            set_t(static_cast<::exchange::Client_MessageType>(val));
-          } else {
-            ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(1, val, mutable_unknown_fields());
-          }
+          set_t(static_cast<::exchange::ClientMessage_MessageType>(val));
         } else goto handle_unusual;
         continue;
-      // optional .exchange.Client.Transaction add_order = 2;
+      // .exchange.ClientMessage.Transaction add_order = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(mutable_add_order(), ptr);
@@ -1834,7 +1633,6 @@ const char* Client::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
     }  // switch
   }  // while
 success:
-  _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
@@ -1842,36 +1640,31 @@ failure:
 #undef CHK_
 }
 #else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool Client::MergePartialFromCodedStream(
+bool ClientMessage::MergePartialFromCodedStream(
     ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-  // @@protoc_insertion_point(parse_start:exchange.Client)
+  // @@protoc_insertion_point(parse_start:exchange.ClientMessage)
   for (;;) {
     ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required .exchange.Client.MessageType t = 1;
+      // .exchange.ClientMessage.MessageType t = 1;
       case 1: {
         if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (8 & 0xFF)) {
           int value = 0;
           DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
                    int, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_ENUM>(
                  input, &value)));
-          if (::exchange::Client_MessageType_IsValid(value)) {
-            set_t(static_cast< ::exchange::Client_MessageType >(value));
-          } else {
-            mutable_unknown_fields()->AddVarint(
-                1, static_cast<::PROTOBUF_NAMESPACE_ID::uint64>(value));
-          }
+          set_t(static_cast< ::exchange::ClientMessage_MessageType >(value));
         } else {
           goto handle_unusual;
         }
         break;
       }
 
-      // optional .exchange.Client.Transaction add_order = 2;
+      // .exchange.ClientMessage.Transaction add_order = 2;
       case 2: {
         if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (18 & 0xFF)) {
           DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadMessage(
@@ -1894,31 +1687,30 @@ bool Client::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:exchange.Client)
+  // @@protoc_insertion_point(parse_success:exchange.ClientMessage)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:exchange.Client)
+  // @@protoc_insertion_point(parse_failure:exchange.ClientMessage)
   return false;
 #undef DO_
 }
 #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
-::PROTOBUF_NAMESPACE_ID::uint8* Client::InternalSerializeWithCachedSizesToArray(
+::PROTOBUF_NAMESPACE_ID::uint8* ClientMessage::InternalSerializeWithCachedSizesToArray(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:exchange.Client)
+  // @@protoc_insertion_point(serialize_to_array_start:exchange.ClientMessage)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  // required .exchange.Client.MessageType t = 1;
-  if (cached_has_bits & 0x00000002u) {
+  // .exchange.ClientMessage.MessageType t = 1;
+  if (this->t() != 0) {
     stream->EnsureSpace(&target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
       1, this->t(), target);
   }
 
-  // optional .exchange.Client.Transaction add_order = 2;
-  if (cached_has_bits & 0x00000001u) {
+  // .exchange.ClientMessage.Transaction add_order = 2;
+  if (this->has_add_order()) {
     stream->EnsureSpace(&target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessageToArray(
@@ -1929,29 +1721,29 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:exchange.Client)
+  // @@protoc_insertion_point(serialize_to_array_end:exchange.ClientMessage)
   return target;
 }
 
-size_t Client::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:exchange.Client)
+size_t ClientMessage::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:exchange.ClientMessage)
   size_t total_size = 0;
 
-  // required .exchange.Client.MessageType t = 1;
-  if (has_t()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->t());
-  }
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // optional .exchange.Client.Transaction add_order = 2;
-  cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x00000001u) {
+  // .exchange.ClientMessage.Transaction add_order = 2;
+  if (this->has_add_order()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *add_order_);
+  }
+
+  // .exchange.ClientMessage.MessageType t = 1;
+  if (this->t() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->t());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1963,71 +1755,62 @@ size_t Client::ByteSizeLong() const {
   return total_size;
 }
 
-void Client::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:exchange.Client)
+void ClientMessage::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:exchange.ClientMessage)
   GOOGLE_DCHECK_NE(&from, this);
-  const Client* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Client>(
+  const ClientMessage* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ClientMessage>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:exchange.Client)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:exchange.ClientMessage)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:exchange.Client)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:exchange.ClientMessage)
     MergeFrom(*source);
   }
 }
 
-void Client::MergeFrom(const Client& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:exchange.Client)
+void ClientMessage::MergeFrom(const ClientMessage& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:exchange.ClientMessage)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 0x00000003u) {
-    if (cached_has_bits & 0x00000001u) {
-      mutable_add_order()->::exchange::Client_Transaction::MergeFrom(from.add_order());
-    }
-    if (cached_has_bits & 0x00000002u) {
-      t_ = from.t_;
-    }
-    _has_bits_[0] |= cached_has_bits;
+  if (from.has_add_order()) {
+    mutable_add_order()->::exchange::ClientMessage_Transaction::MergeFrom(from.add_order());
+  }
+  if (from.t() != 0) {
+    set_t(from.t());
   }
 }
 
-void Client::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:exchange.Client)
+void ClientMessage::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:exchange.ClientMessage)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void Client::CopyFrom(const Client& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:exchange.Client)
+void ClientMessage::CopyFrom(const ClientMessage& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:exchange.ClientMessage)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool Client::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000002) != 0x00000002) return false;
-  if (has_add_order()) {
-    if (!this->add_order_->IsInitialized()) return false;
-  }
+bool ClientMessage::IsInitialized() const {
   return true;
 }
 
-void Client::InternalSwap(Client* other) {
+void ClientMessage::InternalSwap(ClientMessage* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
   swap(add_order_, other->add_order_);
   swap(t_, other->t_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata Client::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata ClientMessage::GetMetadata() const {
   return GetMetadataStatic();
 }
 
@@ -2038,17 +1821,17 @@ PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::exchange::PriceAndSize* Arena::CreateMaybeMessage< ::exchange::PriceAndSize >(Arena* arena) {
   return Arena::CreateInternal< ::exchange::PriceAndSize >(arena);
 }
-template<> PROTOBUF_NOINLINE ::exchange::Server_Position* Arena::CreateMaybeMessage< ::exchange::Server_Position >(Arena* arena) {
-  return Arena::CreateInternal< ::exchange::Server_Position >(arena);
+template<> PROTOBUF_NOINLINE ::exchange::ServerMessage_Position* Arena::CreateMaybeMessage< ::exchange::ServerMessage_Position >(Arena* arena) {
+  return Arena::CreateInternal< ::exchange::ServerMessage_Position >(arena);
 }
-template<> PROTOBUF_NOINLINE ::exchange::Server* Arena::CreateMaybeMessage< ::exchange::Server >(Arena* arena) {
-  return Arena::CreateInternal< ::exchange::Server >(arena);
+template<> PROTOBUF_NOINLINE ::exchange::ServerMessage* Arena::CreateMaybeMessage< ::exchange::ServerMessage >(Arena* arena) {
+  return Arena::CreateInternal< ::exchange::ServerMessage >(arena);
 }
-template<> PROTOBUF_NOINLINE ::exchange::Client_Transaction* Arena::CreateMaybeMessage< ::exchange::Client_Transaction >(Arena* arena) {
-  return Arena::CreateInternal< ::exchange::Client_Transaction >(arena);
+template<> PROTOBUF_NOINLINE ::exchange::ClientMessage_Transaction* Arena::CreateMaybeMessage< ::exchange::ClientMessage_Transaction >(Arena* arena) {
+  return Arena::CreateInternal< ::exchange::ClientMessage_Transaction >(arena);
 }
-template<> PROTOBUF_NOINLINE ::exchange::Client* Arena::CreateMaybeMessage< ::exchange::Client >(Arena* arena) {
-  return Arena::CreateInternal< ::exchange::Client >(arena);
+template<> PROTOBUF_NOINLINE ::exchange::ClientMessage* Arena::CreateMaybeMessage< ::exchange::ClientMessage >(Arena* arena) {
+  return Arena::CreateInternal< ::exchange::ClientMessage >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

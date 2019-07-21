@@ -56,83 +56,89 @@ struct TableStruct_messages_2eproto {
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_messages_2eproto;
 namespace exchange {
-class Client;
-class ClientDefaultTypeInternal;
-extern ClientDefaultTypeInternal _Client_default_instance_;
-class Client_Transaction;
-class Client_TransactionDefaultTypeInternal;
-extern Client_TransactionDefaultTypeInternal _Client_Transaction_default_instance_;
+class ClientMessage;
+class ClientMessageDefaultTypeInternal;
+extern ClientMessageDefaultTypeInternal _ClientMessage_default_instance_;
+class ClientMessage_Transaction;
+class ClientMessage_TransactionDefaultTypeInternal;
+extern ClientMessage_TransactionDefaultTypeInternal _ClientMessage_Transaction_default_instance_;
 class PriceAndSize;
 class PriceAndSizeDefaultTypeInternal;
 extern PriceAndSizeDefaultTypeInternal _PriceAndSize_default_instance_;
-class Server;
-class ServerDefaultTypeInternal;
-extern ServerDefaultTypeInternal _Server_default_instance_;
-class Server_Position;
-class Server_PositionDefaultTypeInternal;
-extern Server_PositionDefaultTypeInternal _Server_Position_default_instance_;
+class ServerMessage;
+class ServerMessageDefaultTypeInternal;
+extern ServerMessageDefaultTypeInternal _ServerMessage_default_instance_;
+class ServerMessage_Position;
+class ServerMessage_PositionDefaultTypeInternal;
+extern ServerMessage_PositionDefaultTypeInternal _ServerMessage_Position_default_instance_;
 }  // namespace exchange
 PROTOBUF_NAMESPACE_OPEN
-template<> ::exchange::Client* Arena::CreateMaybeMessage<::exchange::Client>(Arena*);
-template<> ::exchange::Client_Transaction* Arena::CreateMaybeMessage<::exchange::Client_Transaction>(Arena*);
+template<> ::exchange::ClientMessage* Arena::CreateMaybeMessage<::exchange::ClientMessage>(Arena*);
+template<> ::exchange::ClientMessage_Transaction* Arena::CreateMaybeMessage<::exchange::ClientMessage_Transaction>(Arena*);
 template<> ::exchange::PriceAndSize* Arena::CreateMaybeMessage<::exchange::PriceAndSize>(Arena*);
-template<> ::exchange::Server* Arena::CreateMaybeMessage<::exchange::Server>(Arena*);
-template<> ::exchange::Server_Position* Arena::CreateMaybeMessage<::exchange::Server_Position>(Arena*);
+template<> ::exchange::ServerMessage* Arena::CreateMaybeMessage<::exchange::ServerMessage>(Arena*);
+template<> ::exchange::ServerMessage_Position* Arena::CreateMaybeMessage<::exchange::ServerMessage_Position>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace exchange {
 
-enum Server_MessageType : int {
-  Server_MessageType_HELLO = 1,
-  Server_MessageType_BOOK = 2,
-  Server_MessageType_FILL = 3,
-  Server_MessageType_REJECTED = 4
+enum ServerMessage_MessageType : int {
+  ServerMessage_MessageType_HELLO = 0,
+  ServerMessage_MessageType_BOOK = 1,
+  ServerMessage_MessageType_FILL = 2,
+  ServerMessage_MessageType_REJECTED = 3,
+  ServerMessage_MessageType_ServerMessage_MessageType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  ServerMessage_MessageType_ServerMessage_MessageType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
-bool Server_MessageType_IsValid(int value);
-constexpr Server_MessageType Server_MessageType_MessageType_MIN = Server_MessageType_HELLO;
-constexpr Server_MessageType Server_MessageType_MessageType_MAX = Server_MessageType_REJECTED;
-constexpr int Server_MessageType_MessageType_ARRAYSIZE = Server_MessageType_MessageType_MAX + 1;
+bool ServerMessage_MessageType_IsValid(int value);
+constexpr ServerMessage_MessageType ServerMessage_MessageType_MessageType_MIN = ServerMessage_MessageType_HELLO;
+constexpr ServerMessage_MessageType ServerMessage_MessageType_MessageType_MAX = ServerMessage_MessageType_REJECTED;
+constexpr int ServerMessage_MessageType_MessageType_ARRAYSIZE = ServerMessage_MessageType_MessageType_MAX + 1;
 
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Server_MessageType_descriptor();
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ServerMessage_MessageType_descriptor();
 template<typename T>
-inline const std::string& Server_MessageType_Name(T enum_t_value) {
-  static_assert(::std::is_same<T, Server_MessageType>::value ||
+inline const std::string& ServerMessage_MessageType_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, ServerMessage_MessageType>::value ||
     ::std::is_integral<T>::value,
-    "Incorrect type passed to function Server_MessageType_Name.");
+    "Incorrect type passed to function ServerMessage_MessageType_Name.");
   return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
-    Server_MessageType_descriptor(), enum_t_value);
+    ServerMessage_MessageType_descriptor(), enum_t_value);
 }
-inline bool Server_MessageType_Parse(
-    const std::string& name, Server_MessageType* value) {
-  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<Server_MessageType>(
-    Server_MessageType_descriptor(), name, value);
+inline bool ServerMessage_MessageType_Parse(
+    const std::string& name, ServerMessage_MessageType* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<ServerMessage_MessageType>(
+    ServerMessage_MessageType_descriptor(), name, value);
 }
-enum Client_MessageType : int {
-  Client_MessageType_HELLO = 1,
-  Client_MessageType_ADD_ORDER = 2
+enum ClientMessage_MessageType : int {
+  ClientMessage_MessageType_HELLO = 0,
+  ClientMessage_MessageType_ADD_ORDER = 1,
+  ClientMessage_MessageType_ClientMessage_MessageType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  ClientMessage_MessageType_ClientMessage_MessageType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
-bool Client_MessageType_IsValid(int value);
-constexpr Client_MessageType Client_MessageType_MessageType_MIN = Client_MessageType_HELLO;
-constexpr Client_MessageType Client_MessageType_MessageType_MAX = Client_MessageType_ADD_ORDER;
-constexpr int Client_MessageType_MessageType_ARRAYSIZE = Client_MessageType_MessageType_MAX + 1;
+bool ClientMessage_MessageType_IsValid(int value);
+constexpr ClientMessage_MessageType ClientMessage_MessageType_MessageType_MIN = ClientMessage_MessageType_HELLO;
+constexpr ClientMessage_MessageType ClientMessage_MessageType_MessageType_MAX = ClientMessage_MessageType_ADD_ORDER;
+constexpr int ClientMessage_MessageType_MessageType_ARRAYSIZE = ClientMessage_MessageType_MessageType_MAX + 1;
 
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Client_MessageType_descriptor();
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ClientMessage_MessageType_descriptor();
 template<typename T>
-inline const std::string& Client_MessageType_Name(T enum_t_value) {
-  static_assert(::std::is_same<T, Client_MessageType>::value ||
+inline const std::string& ClientMessage_MessageType_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, ClientMessage_MessageType>::value ||
     ::std::is_integral<T>::value,
-    "Incorrect type passed to function Client_MessageType_Name.");
+    "Incorrect type passed to function ClientMessage_MessageType_Name.");
   return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
-    Client_MessageType_descriptor(), enum_t_value);
+    ClientMessage_MessageType_descriptor(), enum_t_value);
 }
-inline bool Client_MessageType_Parse(
-    const std::string& name, Client_MessageType* value) {
-  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<Client_MessageType>(
-    Client_MessageType_descriptor(), name, value);
+inline bool ClientMessage_MessageType_Parse(
+    const std::string& name, ClientMessage_MessageType* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<ClientMessage_MessageType>(
+    ClientMessage_MessageType_descriptor(), name, value);
 }
 enum StockType : int {
-  BOND = 1,
-  VALBS = 2,
-  VALE = 3
+  BOND = 0,
+  VALBS = 1,
+  VALE = 2,
+  StockType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  StockType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool StockType_IsValid(int value);
 constexpr StockType StockType_MIN = BOND;
@@ -154,8 +160,10 @@ inline bool StockType_Parse(
     StockType_descriptor(), name, value);
 }
 enum Dir : int {
-  BUY = 1,
-  SELL = 2
+  BUY = 0,
+  SELL = 1,
+  Dir_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  Dir_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool Dir_IsValid(int value);
 constexpr Dir Dir_MIN = BUY;
@@ -201,13 +209,6 @@ class PriceAndSize :
       CopyFrom(from);
     }
     return *this;
-  }
-
-  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
-    return _internal_metadata_.unknown_fields();
-  }
-  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
-    return _internal_metadata_.mutable_unknown_fields();
   }
 
   static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
@@ -299,20 +300,12 @@ class PriceAndSize :
     kPriceFieldNumber = 1,
     kSizeFieldNumber = 2,
   };
-  // required int32 price = 1;
-  bool has_price() const;
-  private:
-  bool _internal_has_price() const;
-  public:
+  // int32 price = 1;
   void clear_price();
   ::PROTOBUF_NAMESPACE_ID::int32 price() const;
   void set_price(::PROTOBUF_NAMESPACE_ID::int32 value);
 
-  // required int32 size = 2;
-  bool has_size() const;
-  private:
-  bool _internal_has_size() const;
-  public:
+  // int32 size = 2;
   void clear_size();
   ::PROTOBUF_NAMESPACE_ID::int32 size() const;
   void set_size(::PROTOBUF_NAMESPACE_ID::int32 value);
@@ -321,48 +314,37 @@ class PriceAndSize :
  private:
   class _Internal;
 
-  // helper for ByteSizeLong()
-  size_t RequiredFieldsByteSizeFallback() const;
-
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
-  ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::int32 price_;
   ::PROTOBUF_NAMESPACE_ID::int32 size_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_messages_2eproto;
 };
 // -------------------------------------------------------------------
 
-class Server_Position :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:exchange.Server.Position) */ {
+class ServerMessage_Position :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:exchange.ServerMessage.Position) */ {
  public:
-  Server_Position();
-  virtual ~Server_Position();
+  ServerMessage_Position();
+  virtual ~ServerMessage_Position();
 
-  Server_Position(const Server_Position& from);
-  Server_Position(Server_Position&& from) noexcept
-    : Server_Position() {
+  ServerMessage_Position(const ServerMessage_Position& from);
+  ServerMessage_Position(ServerMessage_Position&& from) noexcept
+    : ServerMessage_Position() {
     *this = ::std::move(from);
   }
 
-  inline Server_Position& operator=(const Server_Position& from) {
+  inline ServerMessage_Position& operator=(const ServerMessage_Position& from) {
     CopyFrom(from);
     return *this;
   }
-  inline Server_Position& operator=(Server_Position&& from) noexcept {
+  inline ServerMessage_Position& operator=(ServerMessage_Position&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
       CopyFrom(from);
     }
     return *this;
-  }
-
-  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
-    return _internal_metadata_.unknown_fields();
-  }
-  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
-    return _internal_metadata_.mutable_unknown_fields();
   }
 
   static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
@@ -374,37 +356,37 @@ class Server_Position :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const Server_Position& default_instance();
+  static const ServerMessage_Position& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const Server_Position* internal_default_instance() {
-    return reinterpret_cast<const Server_Position*>(
-               &_Server_Position_default_instance_);
+  static inline const ServerMessage_Position* internal_default_instance() {
+    return reinterpret_cast<const ServerMessage_Position*>(
+               &_ServerMessage_Position_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     1;
 
-  friend void swap(Server_Position& a, Server_Position& b) {
+  friend void swap(ServerMessage_Position& a, ServerMessage_Position& b) {
     a.Swap(&b);
   }
-  inline void Swap(Server_Position* other) {
+  inline void Swap(ServerMessage_Position* other) {
     if (other == this) return;
     InternalSwap(other);
   }
 
   // implements Message ----------------------------------------------
 
-  inline Server_Position* New() const final {
-    return CreateMaybeMessage<Server_Position>(nullptr);
+  inline ServerMessage_Position* New() const final {
+    return CreateMaybeMessage<ServerMessage_Position>(nullptr);
   }
 
-  Server_Position* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<Server_Position>(arena);
+  ServerMessage_Position* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ServerMessage_Position>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const Server_Position& from);
-  void MergeFrom(const Server_Position& from);
+  void CopyFrom(const ServerMessage_Position& from);
+  void MergeFrom(const ServerMessage_Position& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -423,10 +405,10 @@ class Server_Position :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(Server_Position* other);
+  void InternalSwap(ServerMessage_Position* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "exchange.Server.Position";
+    return "exchange.ServerMessage.Position";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -477,59 +459,47 @@ class Server_Position :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::exchange::PriceAndSize >&
       sell() const;
 
-  // required .exchange.StockType symbol = 1;
-  bool has_symbol() const;
-  private:
-  bool _internal_has_symbol() const;
-  public:
+  // .exchange.StockType symbol = 1;
   void clear_symbol();
   ::exchange::StockType symbol() const;
   void set_symbol(::exchange::StockType value);
 
-  // @@protoc_insertion_point(class_scope:exchange.Server.Position)
+  // @@protoc_insertion_point(class_scope:exchange.ServerMessage.Position)
  private:
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
-  ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::exchange::PriceAndSize > buy_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::exchange::PriceAndSize > sell_;
   int symbol_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_messages_2eproto;
 };
 // -------------------------------------------------------------------
 
-class Server :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:exchange.Server) */ {
+class ServerMessage :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:exchange.ServerMessage) */ {
  public:
-  Server();
-  virtual ~Server();
+  ServerMessage();
+  virtual ~ServerMessage();
 
-  Server(const Server& from);
-  Server(Server&& from) noexcept
-    : Server() {
+  ServerMessage(const ServerMessage& from);
+  ServerMessage(ServerMessage&& from) noexcept
+    : ServerMessage() {
     *this = ::std::move(from);
   }
 
-  inline Server& operator=(const Server& from) {
+  inline ServerMessage& operator=(const ServerMessage& from) {
     CopyFrom(from);
     return *this;
   }
-  inline Server& operator=(Server&& from) noexcept {
+  inline ServerMessage& operator=(ServerMessage&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
       CopyFrom(from);
     }
     return *this;
-  }
-
-  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
-    return _internal_metadata_.unknown_fields();
-  }
-  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
-    return _internal_metadata_.mutable_unknown_fields();
   }
 
   static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
@@ -541,37 +511,37 @@ class Server :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const Server& default_instance();
+  static const ServerMessage& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const Server* internal_default_instance() {
-    return reinterpret_cast<const Server*>(
-               &_Server_default_instance_);
+  static inline const ServerMessage* internal_default_instance() {
+    return reinterpret_cast<const ServerMessage*>(
+               &_ServerMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     2;
 
-  friend void swap(Server& a, Server& b) {
+  friend void swap(ServerMessage& a, ServerMessage& b) {
     a.Swap(&b);
   }
-  inline void Swap(Server* other) {
+  inline void Swap(ServerMessage* other) {
     if (other == this) return;
     InternalSwap(other);
   }
 
   // implements Message ----------------------------------------------
 
-  inline Server* New() const final {
-    return CreateMaybeMessage<Server>(nullptr);
+  inline ServerMessage* New() const final {
+    return CreateMaybeMessage<ServerMessage>(nullptr);
   }
 
-  Server* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<Server>(arena);
+  ServerMessage* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ServerMessage>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const Server& from);
-  void MergeFrom(const Server& from);
+  void CopyFrom(const ServerMessage& from);
+  void MergeFrom(const ServerMessage& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -590,10 +560,10 @@ class Server :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(Server* other);
+  void InternalSwap(ServerMessage* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "exchange.Server";
+    return "exchange.ServerMessage";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -615,40 +585,40 @@ class Server :
 
   // nested types ----------------------------------------------------
 
-  typedef Server_Position Position;
+  typedef ServerMessage_Position Position;
 
-  typedef Server_MessageType MessageType;
+  typedef ServerMessage_MessageType MessageType;
   static constexpr MessageType HELLO =
-    Server_MessageType_HELLO;
+    ServerMessage_MessageType_HELLO;
   static constexpr MessageType BOOK =
-    Server_MessageType_BOOK;
+    ServerMessage_MessageType_BOOK;
   static constexpr MessageType FILL =
-    Server_MessageType_FILL;
+    ServerMessage_MessageType_FILL;
   static constexpr MessageType REJECTED =
-    Server_MessageType_REJECTED;
+    ServerMessage_MessageType_REJECTED;
   static inline bool MessageType_IsValid(int value) {
-    return Server_MessageType_IsValid(value);
+    return ServerMessage_MessageType_IsValid(value);
   }
   static constexpr MessageType MessageType_MIN =
-    Server_MessageType_MessageType_MIN;
+    ServerMessage_MessageType_MessageType_MIN;
   static constexpr MessageType MessageType_MAX =
-    Server_MessageType_MessageType_MAX;
+    ServerMessage_MessageType_MessageType_MAX;
   static constexpr int MessageType_ARRAYSIZE =
-    Server_MessageType_MessageType_ARRAYSIZE;
+    ServerMessage_MessageType_MessageType_ARRAYSIZE;
   static inline const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor*
   MessageType_descriptor() {
-    return Server_MessageType_descriptor();
+    return ServerMessage_MessageType_descriptor();
   }
   template<typename T>
   static inline const std::string& MessageType_Name(T enum_t_value) {
     static_assert(::std::is_same<T, MessageType>::value ||
       ::std::is_integral<T>::value,
       "Incorrect type passed to function MessageType_Name.");
-    return Server_MessageType_Name(enum_t_value);
+    return ServerMessage_MessageType_Name(enum_t_value);
   }
   static inline bool MessageType_Parse(const std::string& name,
       MessageType* value) {
-    return Server_MessageType_Parse(name, value);
+    return ServerMessage_MessageType_Parse(name, value);
   }
 
   // accessors -------------------------------------------------------
@@ -657,69 +627,57 @@ class Server :
     kBookFieldNumber = 2,
     kTFieldNumber = 1,
   };
-  // optional .exchange.Server.Position book = 2;
+  // .exchange.ServerMessage.Position book = 2;
   bool has_book() const;
   private:
   bool _internal_has_book() const;
   public:
   void clear_book();
-  const ::exchange::Server_Position& book() const;
-  ::exchange::Server_Position* release_book();
-  ::exchange::Server_Position* mutable_book();
-  void set_allocated_book(::exchange::Server_Position* book);
+  const ::exchange::ServerMessage_Position& book() const;
+  ::exchange::ServerMessage_Position* release_book();
+  ::exchange::ServerMessage_Position* mutable_book();
+  void set_allocated_book(::exchange::ServerMessage_Position* book);
 
-  // required .exchange.Server.MessageType t = 1;
-  bool has_t() const;
-  private:
-  bool _internal_has_t() const;
-  public:
+  // .exchange.ServerMessage.MessageType t = 1;
   void clear_t();
-  ::exchange::Server_MessageType t() const;
-  void set_t(::exchange::Server_MessageType value);
+  ::exchange::ServerMessage_MessageType t() const;
+  void set_t(::exchange::ServerMessage_MessageType value);
 
-  // @@protoc_insertion_point(class_scope:exchange.Server)
+  // @@protoc_insertion_point(class_scope:exchange.ServerMessage)
  private:
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
-  ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  ::exchange::Server_Position* book_;
+  ::exchange::ServerMessage_Position* book_;
   int t_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_messages_2eproto;
 };
 // -------------------------------------------------------------------
 
-class Client_Transaction :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:exchange.Client.Transaction) */ {
+class ClientMessage_Transaction :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:exchange.ClientMessage.Transaction) */ {
  public:
-  Client_Transaction();
-  virtual ~Client_Transaction();
+  ClientMessage_Transaction();
+  virtual ~ClientMessage_Transaction();
 
-  Client_Transaction(const Client_Transaction& from);
-  Client_Transaction(Client_Transaction&& from) noexcept
-    : Client_Transaction() {
+  ClientMessage_Transaction(const ClientMessage_Transaction& from);
+  ClientMessage_Transaction(ClientMessage_Transaction&& from) noexcept
+    : ClientMessage_Transaction() {
     *this = ::std::move(from);
   }
 
-  inline Client_Transaction& operator=(const Client_Transaction& from) {
+  inline ClientMessage_Transaction& operator=(const ClientMessage_Transaction& from) {
     CopyFrom(from);
     return *this;
   }
-  inline Client_Transaction& operator=(Client_Transaction&& from) noexcept {
+  inline ClientMessage_Transaction& operator=(ClientMessage_Transaction&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
       CopyFrom(from);
     }
     return *this;
-  }
-
-  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
-    return _internal_metadata_.unknown_fields();
-  }
-  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
-    return _internal_metadata_.mutable_unknown_fields();
   }
 
   static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
@@ -731,37 +689,37 @@ class Client_Transaction :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const Client_Transaction& default_instance();
+  static const ClientMessage_Transaction& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const Client_Transaction* internal_default_instance() {
-    return reinterpret_cast<const Client_Transaction*>(
-               &_Client_Transaction_default_instance_);
+  static inline const ClientMessage_Transaction* internal_default_instance() {
+    return reinterpret_cast<const ClientMessage_Transaction*>(
+               &_ClientMessage_Transaction_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     3;
 
-  friend void swap(Client_Transaction& a, Client_Transaction& b) {
+  friend void swap(ClientMessage_Transaction& a, ClientMessage_Transaction& b) {
     a.Swap(&b);
   }
-  inline void Swap(Client_Transaction* other) {
+  inline void Swap(ClientMessage_Transaction* other) {
     if (other == this) return;
     InternalSwap(other);
   }
 
   // implements Message ----------------------------------------------
 
-  inline Client_Transaction* New() const final {
-    return CreateMaybeMessage<Client_Transaction>(nullptr);
+  inline ClientMessage_Transaction* New() const final {
+    return CreateMaybeMessage<ClientMessage_Transaction>(nullptr);
   }
 
-  Client_Transaction* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<Client_Transaction>(arena);
+  ClientMessage_Transaction* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ClientMessage_Transaction>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const Client_Transaction& from);
-  void MergeFrom(const Client_Transaction& from);
+  void CopyFrom(const ClientMessage_Transaction& from);
+  void MergeFrom(const ClientMessage_Transaction& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -780,10 +738,10 @@ class Client_Transaction :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(Client_Transaction* other);
+  void InternalSwap(ClientMessage_Transaction* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "exchange.Client.Transaction";
+    return "exchange.ClientMessage.Transaction";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -808,95 +766,68 @@ class Client_Transaction :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kSymbolFieldNumber = 1,
     kPriceFieldNumber = 2,
     kSizeFieldNumber = 3,
-    kSymbolFieldNumber = 1,
     kDirFieldNumber = 4,
   };
-  // required int32 price = 2;
-  bool has_price() const;
-  private:
-  bool _internal_has_price() const;
-  public:
-  void clear_price();
-  ::PROTOBUF_NAMESPACE_ID::int32 price() const;
-  void set_price(::PROTOBUF_NAMESPACE_ID::int32 value);
-
-  // required int32 size = 3;
-  bool has_size() const;
-  private:
-  bool _internal_has_size() const;
-  public:
-  void clear_size();
-  ::PROTOBUF_NAMESPACE_ID::int32 size() const;
-  void set_size(::PROTOBUF_NAMESPACE_ID::int32 value);
-
-  // required .exchange.StockType symbol = 1;
-  bool has_symbol() const;
-  private:
-  bool _internal_has_symbol() const;
-  public:
+  // .exchange.StockType symbol = 1;
   void clear_symbol();
   ::exchange::StockType symbol() const;
   void set_symbol(::exchange::StockType value);
 
-  // required .exchange.Dir dir = 4;
-  bool has_dir() const;
-  private:
-  bool _internal_has_dir() const;
-  public:
+  // int32 price = 2;
+  void clear_price();
+  ::PROTOBUF_NAMESPACE_ID::int32 price() const;
+  void set_price(::PROTOBUF_NAMESPACE_ID::int32 value);
+
+  // int32 size = 3;
+  void clear_size();
+  ::PROTOBUF_NAMESPACE_ID::int32 size() const;
+  void set_size(::PROTOBUF_NAMESPACE_ID::int32 value);
+
+  // .exchange.Dir dir = 4;
   void clear_dir();
   ::exchange::Dir dir() const;
   void set_dir(::exchange::Dir value);
 
-  // @@protoc_insertion_point(class_scope:exchange.Client.Transaction)
+  // @@protoc_insertion_point(class_scope:exchange.ClientMessage.Transaction)
  private:
   class _Internal;
 
-  // helper for ByteSizeLong()
-  size_t RequiredFieldsByteSizeFallback() const;
-
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
-  ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  int symbol_;
   ::PROTOBUF_NAMESPACE_ID::int32 price_;
   ::PROTOBUF_NAMESPACE_ID::int32 size_;
-  int symbol_;
   int dir_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_messages_2eproto;
 };
 // -------------------------------------------------------------------
 
-class Client :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:exchange.Client) */ {
+class ClientMessage :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:exchange.ClientMessage) */ {
  public:
-  Client();
-  virtual ~Client();
+  ClientMessage();
+  virtual ~ClientMessage();
 
-  Client(const Client& from);
-  Client(Client&& from) noexcept
-    : Client() {
+  ClientMessage(const ClientMessage& from);
+  ClientMessage(ClientMessage&& from) noexcept
+    : ClientMessage() {
     *this = ::std::move(from);
   }
 
-  inline Client& operator=(const Client& from) {
+  inline ClientMessage& operator=(const ClientMessage& from) {
     CopyFrom(from);
     return *this;
   }
-  inline Client& operator=(Client&& from) noexcept {
+  inline ClientMessage& operator=(ClientMessage&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
       CopyFrom(from);
     }
     return *this;
-  }
-
-  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
-    return _internal_metadata_.unknown_fields();
-  }
-  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
-    return _internal_metadata_.mutable_unknown_fields();
   }
 
   static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
@@ -908,37 +839,37 @@ class Client :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const Client& default_instance();
+  static const ClientMessage& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const Client* internal_default_instance() {
-    return reinterpret_cast<const Client*>(
-               &_Client_default_instance_);
+  static inline const ClientMessage* internal_default_instance() {
+    return reinterpret_cast<const ClientMessage*>(
+               &_ClientMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     4;
 
-  friend void swap(Client& a, Client& b) {
+  friend void swap(ClientMessage& a, ClientMessage& b) {
     a.Swap(&b);
   }
-  inline void Swap(Client* other) {
+  inline void Swap(ClientMessage* other) {
     if (other == this) return;
     InternalSwap(other);
   }
 
   // implements Message ----------------------------------------------
 
-  inline Client* New() const final {
-    return CreateMaybeMessage<Client>(nullptr);
+  inline ClientMessage* New() const final {
+    return CreateMaybeMessage<ClientMessage>(nullptr);
   }
 
-  Client* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<Client>(arena);
+  ClientMessage* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ClientMessage>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const Client& from);
-  void MergeFrom(const Client& from);
+  void CopyFrom(const ClientMessage& from);
+  void MergeFrom(const ClientMessage& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -957,10 +888,10 @@ class Client :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(Client* other);
+  void InternalSwap(ClientMessage* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "exchange.Client";
+    return "exchange.ClientMessage";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -982,36 +913,36 @@ class Client :
 
   // nested types ----------------------------------------------------
 
-  typedef Client_Transaction Transaction;
+  typedef ClientMessage_Transaction Transaction;
 
-  typedef Client_MessageType MessageType;
+  typedef ClientMessage_MessageType MessageType;
   static constexpr MessageType HELLO =
-    Client_MessageType_HELLO;
+    ClientMessage_MessageType_HELLO;
   static constexpr MessageType ADD_ORDER =
-    Client_MessageType_ADD_ORDER;
+    ClientMessage_MessageType_ADD_ORDER;
   static inline bool MessageType_IsValid(int value) {
-    return Client_MessageType_IsValid(value);
+    return ClientMessage_MessageType_IsValid(value);
   }
   static constexpr MessageType MessageType_MIN =
-    Client_MessageType_MessageType_MIN;
+    ClientMessage_MessageType_MessageType_MIN;
   static constexpr MessageType MessageType_MAX =
-    Client_MessageType_MessageType_MAX;
+    ClientMessage_MessageType_MessageType_MAX;
   static constexpr int MessageType_ARRAYSIZE =
-    Client_MessageType_MessageType_ARRAYSIZE;
+    ClientMessage_MessageType_MessageType_ARRAYSIZE;
   static inline const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor*
   MessageType_descriptor() {
-    return Client_MessageType_descriptor();
+    return ClientMessage_MessageType_descriptor();
   }
   template<typename T>
   static inline const std::string& MessageType_Name(T enum_t_value) {
     static_assert(::std::is_same<T, MessageType>::value ||
       ::std::is_integral<T>::value,
       "Incorrect type passed to function MessageType_Name.");
-    return Client_MessageType_Name(enum_t_value);
+    return ClientMessage_MessageType_Name(enum_t_value);
   }
   static inline bool MessageType_Parse(const std::string& name,
       MessageType* value) {
-    return Client_MessageType_Parse(name, value);
+    return ClientMessage_MessageType_Parse(name, value);
   }
 
   // accessors -------------------------------------------------------
@@ -1020,35 +951,30 @@ class Client :
     kAddOrderFieldNumber = 2,
     kTFieldNumber = 1,
   };
-  // optional .exchange.Client.Transaction add_order = 2;
+  // .exchange.ClientMessage.Transaction add_order = 2;
   bool has_add_order() const;
   private:
   bool _internal_has_add_order() const;
   public:
   void clear_add_order();
-  const ::exchange::Client_Transaction& add_order() const;
-  ::exchange::Client_Transaction* release_add_order();
-  ::exchange::Client_Transaction* mutable_add_order();
-  void set_allocated_add_order(::exchange::Client_Transaction* add_order);
+  const ::exchange::ClientMessage_Transaction& add_order() const;
+  ::exchange::ClientMessage_Transaction* release_add_order();
+  ::exchange::ClientMessage_Transaction* mutable_add_order();
+  void set_allocated_add_order(::exchange::ClientMessage_Transaction* add_order);
 
-  // required .exchange.Client.MessageType t = 1;
-  bool has_t() const;
-  private:
-  bool _internal_has_t() const;
-  public:
+  // .exchange.ClientMessage.MessageType t = 1;
   void clear_t();
-  ::exchange::Client_MessageType t() const;
-  void set_t(::exchange::Client_MessageType value);
+  ::exchange::ClientMessage_MessageType t() const;
+  void set_t(::exchange::ClientMessage_MessageType value);
 
-  // @@protoc_insertion_point(class_scope:exchange.Client)
+  // @@protoc_insertion_point(class_scope:exchange.ClientMessage)
  private:
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
-  ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  ::exchange::Client_Transaction* add_order_;
+  ::exchange::ClientMessage_Transaction* add_order_;
   int t_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_messages_2eproto;
 };
 // ===================================================================
@@ -1062,194 +988,163 @@ class Client :
 #endif  // __GNUC__
 // PriceAndSize
 
-// required int32 price = 1;
-inline bool PriceAndSize::_internal_has_price() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-inline bool PriceAndSize::has_price() const {
-  return _internal_has_price();
-}
+// int32 price = 1;
 inline void PriceAndSize::clear_price() {
   price_ = 0;
-  _has_bits_[0] &= ~0x00000001u;
 }
 inline ::PROTOBUF_NAMESPACE_ID::int32 PriceAndSize::price() const {
   // @@protoc_insertion_point(field_get:exchange.PriceAndSize.price)
   return price_;
 }
 inline void PriceAndSize::set_price(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  _has_bits_[0] |= 0x00000001u;
+  
   price_ = value;
   // @@protoc_insertion_point(field_set:exchange.PriceAndSize.price)
 }
 
-// required int32 size = 2;
-inline bool PriceAndSize::_internal_has_size() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-inline bool PriceAndSize::has_size() const {
-  return _internal_has_size();
-}
+// int32 size = 2;
 inline void PriceAndSize::clear_size() {
   size_ = 0;
-  _has_bits_[0] &= ~0x00000002u;
 }
 inline ::PROTOBUF_NAMESPACE_ID::int32 PriceAndSize::size() const {
   // @@protoc_insertion_point(field_get:exchange.PriceAndSize.size)
   return size_;
 }
 inline void PriceAndSize::set_size(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  _has_bits_[0] |= 0x00000002u;
+  
   size_ = value;
   // @@protoc_insertion_point(field_set:exchange.PriceAndSize.size)
 }
 
 // -------------------------------------------------------------------
 
-// Server_Position
+// ServerMessage_Position
 
-// required .exchange.StockType symbol = 1;
-inline bool Server_Position::_internal_has_symbol() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
+// .exchange.StockType symbol = 1;
+inline void ServerMessage_Position::clear_symbol() {
+  symbol_ = 0;
 }
-inline bool Server_Position::has_symbol() const {
-  return _internal_has_symbol();
-}
-inline void Server_Position::clear_symbol() {
-  symbol_ = 1;
-  _has_bits_[0] &= ~0x00000001u;
-}
-inline ::exchange::StockType Server_Position::symbol() const {
-  // @@protoc_insertion_point(field_get:exchange.Server.Position.symbol)
+inline ::exchange::StockType ServerMessage_Position::symbol() const {
+  // @@protoc_insertion_point(field_get:exchange.ServerMessage.Position.symbol)
   return static_cast< ::exchange::StockType >(symbol_);
 }
-inline void Server_Position::set_symbol(::exchange::StockType value) {
-  assert(::exchange::StockType_IsValid(value));
-  _has_bits_[0] |= 0x00000001u;
+inline void ServerMessage_Position::set_symbol(::exchange::StockType value) {
+  
   symbol_ = value;
-  // @@protoc_insertion_point(field_set:exchange.Server.Position.symbol)
+  // @@protoc_insertion_point(field_set:exchange.ServerMessage.Position.symbol)
 }
 
 // repeated .exchange.PriceAndSize buy = 2;
-inline int Server_Position::buy_size() const {
+inline int ServerMessage_Position::buy_size() const {
   return buy_.size();
 }
-inline void Server_Position::clear_buy() {
+inline void ServerMessage_Position::clear_buy() {
   buy_.Clear();
 }
-inline ::exchange::PriceAndSize* Server_Position::mutable_buy(int index) {
-  // @@protoc_insertion_point(field_mutable:exchange.Server.Position.buy)
+inline ::exchange::PriceAndSize* ServerMessage_Position::mutable_buy(int index) {
+  // @@protoc_insertion_point(field_mutable:exchange.ServerMessage.Position.buy)
   return buy_.Mutable(index);
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::exchange::PriceAndSize >*
-Server_Position::mutable_buy() {
-  // @@protoc_insertion_point(field_mutable_list:exchange.Server.Position.buy)
+ServerMessage_Position::mutable_buy() {
+  // @@protoc_insertion_point(field_mutable_list:exchange.ServerMessage.Position.buy)
   return &buy_;
 }
-inline const ::exchange::PriceAndSize& Server_Position::buy(int index) const {
-  // @@protoc_insertion_point(field_get:exchange.Server.Position.buy)
+inline const ::exchange::PriceAndSize& ServerMessage_Position::buy(int index) const {
+  // @@protoc_insertion_point(field_get:exchange.ServerMessage.Position.buy)
   return buy_.Get(index);
 }
-inline ::exchange::PriceAndSize* Server_Position::add_buy() {
-  // @@protoc_insertion_point(field_add:exchange.Server.Position.buy)
+inline ::exchange::PriceAndSize* ServerMessage_Position::add_buy() {
+  // @@protoc_insertion_point(field_add:exchange.ServerMessage.Position.buy)
   return buy_.Add();
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::exchange::PriceAndSize >&
-Server_Position::buy() const {
-  // @@protoc_insertion_point(field_list:exchange.Server.Position.buy)
+ServerMessage_Position::buy() const {
+  // @@protoc_insertion_point(field_list:exchange.ServerMessage.Position.buy)
   return buy_;
 }
 
 // repeated .exchange.PriceAndSize sell = 3;
-inline int Server_Position::sell_size() const {
+inline int ServerMessage_Position::sell_size() const {
   return sell_.size();
 }
-inline void Server_Position::clear_sell() {
+inline void ServerMessage_Position::clear_sell() {
   sell_.Clear();
 }
-inline ::exchange::PriceAndSize* Server_Position::mutable_sell(int index) {
-  // @@protoc_insertion_point(field_mutable:exchange.Server.Position.sell)
+inline ::exchange::PriceAndSize* ServerMessage_Position::mutable_sell(int index) {
+  // @@protoc_insertion_point(field_mutable:exchange.ServerMessage.Position.sell)
   return sell_.Mutable(index);
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::exchange::PriceAndSize >*
-Server_Position::mutable_sell() {
-  // @@protoc_insertion_point(field_mutable_list:exchange.Server.Position.sell)
+ServerMessage_Position::mutable_sell() {
+  // @@protoc_insertion_point(field_mutable_list:exchange.ServerMessage.Position.sell)
   return &sell_;
 }
-inline const ::exchange::PriceAndSize& Server_Position::sell(int index) const {
-  // @@protoc_insertion_point(field_get:exchange.Server.Position.sell)
+inline const ::exchange::PriceAndSize& ServerMessage_Position::sell(int index) const {
+  // @@protoc_insertion_point(field_get:exchange.ServerMessage.Position.sell)
   return sell_.Get(index);
 }
-inline ::exchange::PriceAndSize* Server_Position::add_sell() {
-  // @@protoc_insertion_point(field_add:exchange.Server.Position.sell)
+inline ::exchange::PriceAndSize* ServerMessage_Position::add_sell() {
+  // @@protoc_insertion_point(field_add:exchange.ServerMessage.Position.sell)
   return sell_.Add();
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::exchange::PriceAndSize >&
-Server_Position::sell() const {
-  // @@protoc_insertion_point(field_list:exchange.Server.Position.sell)
+ServerMessage_Position::sell() const {
+  // @@protoc_insertion_point(field_list:exchange.ServerMessage.Position.sell)
   return sell_;
 }
 
 // -------------------------------------------------------------------
 
-// Server
+// ServerMessage
 
-// required .exchange.Server.MessageType t = 1;
-inline bool Server::_internal_has_t() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
+// .exchange.ServerMessage.MessageType t = 1;
+inline void ServerMessage::clear_t() {
+  t_ = 0;
 }
-inline bool Server::has_t() const {
-  return _internal_has_t();
+inline ::exchange::ServerMessage_MessageType ServerMessage::t() const {
+  // @@protoc_insertion_point(field_get:exchange.ServerMessage.t)
+  return static_cast< ::exchange::ServerMessage_MessageType >(t_);
 }
-inline void Server::clear_t() {
-  t_ = 1;
-  _has_bits_[0] &= ~0x00000002u;
-}
-inline ::exchange::Server_MessageType Server::t() const {
-  // @@protoc_insertion_point(field_get:exchange.Server.t)
-  return static_cast< ::exchange::Server_MessageType >(t_);
-}
-inline void Server::set_t(::exchange::Server_MessageType value) {
-  assert(::exchange::Server_MessageType_IsValid(value));
-  _has_bits_[0] |= 0x00000002u;
+inline void ServerMessage::set_t(::exchange::ServerMessage_MessageType value) {
+  
   t_ = value;
-  // @@protoc_insertion_point(field_set:exchange.Server.t)
+  // @@protoc_insertion_point(field_set:exchange.ServerMessage.t)
 }
 
-// optional .exchange.Server.Position book = 2;
-inline bool Server::_internal_has_book() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
+// .exchange.ServerMessage.Position book = 2;
+inline bool ServerMessage::has_book() const {
+  return this != internal_default_instance() && book_ != nullptr;
 }
-inline bool Server::has_book() const {
-  return _internal_has_book();
+inline void ServerMessage::clear_book() {
+  if (GetArenaNoVirtual() == nullptr && book_ != nullptr) {
+    delete book_;
+  }
+  book_ = nullptr;
 }
-inline void Server::clear_book() {
-  if (book_ != nullptr) book_->Clear();
-  _has_bits_[0] &= ~0x00000001u;
+inline const ::exchange::ServerMessage_Position& ServerMessage::book() const {
+  const ::exchange::ServerMessage_Position* p = book_;
+  // @@protoc_insertion_point(field_get:exchange.ServerMessage.book)
+  return p != nullptr ? *p : *reinterpret_cast<const ::exchange::ServerMessage_Position*>(
+      &::exchange::_ServerMessage_Position_default_instance_);
 }
-inline const ::exchange::Server_Position& Server::book() const {
-  const ::exchange::Server_Position* p = book_;
-  // @@protoc_insertion_point(field_get:exchange.Server.book)
-  return p != nullptr ? *p : *reinterpret_cast<const ::exchange::Server_Position*>(
-      &::exchange::_Server_Position_default_instance_);
-}
-inline ::exchange::Server_Position* Server::release_book() {
-  // @@protoc_insertion_point(field_release:exchange.Server.book)
-  _has_bits_[0] &= ~0x00000001u;
-  ::exchange::Server_Position* temp = book_;
+inline ::exchange::ServerMessage_Position* ServerMessage::release_book() {
+  // @@protoc_insertion_point(field_release:exchange.ServerMessage.book)
+  
+  ::exchange::ServerMessage_Position* temp = book_;
   book_ = nullptr;
   return temp;
 }
-inline ::exchange::Server_Position* Server::mutable_book() {
-  _has_bits_[0] |= 0x00000001u;
+inline ::exchange::ServerMessage_Position* ServerMessage::mutable_book() {
+  
   if (book_ == nullptr) {
-    auto* p = CreateMaybeMessage<::exchange::Server_Position>(GetArenaNoVirtual());
+    auto* p = CreateMaybeMessage<::exchange::ServerMessage_Position>(GetArenaNoVirtual());
     book_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:exchange.Server.book)
+  // @@protoc_insertion_point(field_mutable:exchange.ServerMessage.book)
   return book_;
 }
-inline void Server::set_allocated_book(::exchange::Server_Position* book) {
+inline void ServerMessage::set_allocated_book(::exchange::ServerMessage_Position* book) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
     delete book_;
@@ -1260,164 +1155,125 @@ inline void Server::set_allocated_book(::exchange::Server_Position* book) {
       book = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, book, submessage_arena);
     }
-    _has_bits_[0] |= 0x00000001u;
+    
   } else {
-    _has_bits_[0] &= ~0x00000001u;
+    
   }
   book_ = book;
-  // @@protoc_insertion_point(field_set_allocated:exchange.Server.book)
+  // @@protoc_insertion_point(field_set_allocated:exchange.ServerMessage.book)
 }
 
 // -------------------------------------------------------------------
 
-// Client_Transaction
+// ClientMessage_Transaction
 
-// required .exchange.StockType symbol = 1;
-inline bool Client_Transaction::_internal_has_symbol() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
+// .exchange.StockType symbol = 1;
+inline void ClientMessage_Transaction::clear_symbol() {
+  symbol_ = 0;
 }
-inline bool Client_Transaction::has_symbol() const {
-  return _internal_has_symbol();
-}
-inline void Client_Transaction::clear_symbol() {
-  symbol_ = 1;
-  _has_bits_[0] &= ~0x00000004u;
-}
-inline ::exchange::StockType Client_Transaction::symbol() const {
-  // @@protoc_insertion_point(field_get:exchange.Client.Transaction.symbol)
+inline ::exchange::StockType ClientMessage_Transaction::symbol() const {
+  // @@protoc_insertion_point(field_get:exchange.ClientMessage.Transaction.symbol)
   return static_cast< ::exchange::StockType >(symbol_);
 }
-inline void Client_Transaction::set_symbol(::exchange::StockType value) {
-  assert(::exchange::StockType_IsValid(value));
-  _has_bits_[0] |= 0x00000004u;
+inline void ClientMessage_Transaction::set_symbol(::exchange::StockType value) {
+  
   symbol_ = value;
-  // @@protoc_insertion_point(field_set:exchange.Client.Transaction.symbol)
+  // @@protoc_insertion_point(field_set:exchange.ClientMessage.Transaction.symbol)
 }
 
-// required int32 price = 2;
-inline bool Client_Transaction::_internal_has_price() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-inline bool Client_Transaction::has_price() const {
-  return _internal_has_price();
-}
-inline void Client_Transaction::clear_price() {
+// int32 price = 2;
+inline void ClientMessage_Transaction::clear_price() {
   price_ = 0;
-  _has_bits_[0] &= ~0x00000001u;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 Client_Transaction::price() const {
-  // @@protoc_insertion_point(field_get:exchange.Client.Transaction.price)
+inline ::PROTOBUF_NAMESPACE_ID::int32 ClientMessage_Transaction::price() const {
+  // @@protoc_insertion_point(field_get:exchange.ClientMessage.Transaction.price)
   return price_;
 }
-inline void Client_Transaction::set_price(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  _has_bits_[0] |= 0x00000001u;
+inline void ClientMessage_Transaction::set_price(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
   price_ = value;
-  // @@protoc_insertion_point(field_set:exchange.Client.Transaction.price)
+  // @@protoc_insertion_point(field_set:exchange.ClientMessage.Transaction.price)
 }
 
-// required int32 size = 3;
-inline bool Client_Transaction::_internal_has_size() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-inline bool Client_Transaction::has_size() const {
-  return _internal_has_size();
-}
-inline void Client_Transaction::clear_size() {
+// int32 size = 3;
+inline void ClientMessage_Transaction::clear_size() {
   size_ = 0;
-  _has_bits_[0] &= ~0x00000002u;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 Client_Transaction::size() const {
-  // @@protoc_insertion_point(field_get:exchange.Client.Transaction.size)
+inline ::PROTOBUF_NAMESPACE_ID::int32 ClientMessage_Transaction::size() const {
+  // @@protoc_insertion_point(field_get:exchange.ClientMessage.Transaction.size)
   return size_;
 }
-inline void Client_Transaction::set_size(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  _has_bits_[0] |= 0x00000002u;
+inline void ClientMessage_Transaction::set_size(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
   size_ = value;
-  // @@protoc_insertion_point(field_set:exchange.Client.Transaction.size)
+  // @@protoc_insertion_point(field_set:exchange.ClientMessage.Transaction.size)
 }
 
-// required .exchange.Dir dir = 4;
-inline bool Client_Transaction::_internal_has_dir() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
+// .exchange.Dir dir = 4;
+inline void ClientMessage_Transaction::clear_dir() {
+  dir_ = 0;
 }
-inline bool Client_Transaction::has_dir() const {
-  return _internal_has_dir();
-}
-inline void Client_Transaction::clear_dir() {
-  dir_ = 1;
-  _has_bits_[0] &= ~0x00000008u;
-}
-inline ::exchange::Dir Client_Transaction::dir() const {
-  // @@protoc_insertion_point(field_get:exchange.Client.Transaction.dir)
+inline ::exchange::Dir ClientMessage_Transaction::dir() const {
+  // @@protoc_insertion_point(field_get:exchange.ClientMessage.Transaction.dir)
   return static_cast< ::exchange::Dir >(dir_);
 }
-inline void Client_Transaction::set_dir(::exchange::Dir value) {
-  assert(::exchange::Dir_IsValid(value));
-  _has_bits_[0] |= 0x00000008u;
+inline void ClientMessage_Transaction::set_dir(::exchange::Dir value) {
+  
   dir_ = value;
-  // @@protoc_insertion_point(field_set:exchange.Client.Transaction.dir)
+  // @@protoc_insertion_point(field_set:exchange.ClientMessage.Transaction.dir)
 }
 
 // -------------------------------------------------------------------
 
-// Client
+// ClientMessage
 
-// required .exchange.Client.MessageType t = 1;
-inline bool Client::_internal_has_t() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
+// .exchange.ClientMessage.MessageType t = 1;
+inline void ClientMessage::clear_t() {
+  t_ = 0;
 }
-inline bool Client::has_t() const {
-  return _internal_has_t();
+inline ::exchange::ClientMessage_MessageType ClientMessage::t() const {
+  // @@protoc_insertion_point(field_get:exchange.ClientMessage.t)
+  return static_cast< ::exchange::ClientMessage_MessageType >(t_);
 }
-inline void Client::clear_t() {
-  t_ = 1;
-  _has_bits_[0] &= ~0x00000002u;
-}
-inline ::exchange::Client_MessageType Client::t() const {
-  // @@protoc_insertion_point(field_get:exchange.Client.t)
-  return static_cast< ::exchange::Client_MessageType >(t_);
-}
-inline void Client::set_t(::exchange::Client_MessageType value) {
-  assert(::exchange::Client_MessageType_IsValid(value));
-  _has_bits_[0] |= 0x00000002u;
+inline void ClientMessage::set_t(::exchange::ClientMessage_MessageType value) {
+  
   t_ = value;
-  // @@protoc_insertion_point(field_set:exchange.Client.t)
+  // @@protoc_insertion_point(field_set:exchange.ClientMessage.t)
 }
 
-// optional .exchange.Client.Transaction add_order = 2;
-inline bool Client::_internal_has_add_order() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
+// .exchange.ClientMessage.Transaction add_order = 2;
+inline bool ClientMessage::has_add_order() const {
+  return this != internal_default_instance() && add_order_ != nullptr;
 }
-inline bool Client::has_add_order() const {
-  return _internal_has_add_order();
+inline void ClientMessage::clear_add_order() {
+  if (GetArenaNoVirtual() == nullptr && add_order_ != nullptr) {
+    delete add_order_;
+  }
+  add_order_ = nullptr;
 }
-inline void Client::clear_add_order() {
-  if (add_order_ != nullptr) add_order_->Clear();
-  _has_bits_[0] &= ~0x00000001u;
+inline const ::exchange::ClientMessage_Transaction& ClientMessage::add_order() const {
+  const ::exchange::ClientMessage_Transaction* p = add_order_;
+  // @@protoc_insertion_point(field_get:exchange.ClientMessage.add_order)
+  return p != nullptr ? *p : *reinterpret_cast<const ::exchange::ClientMessage_Transaction*>(
+      &::exchange::_ClientMessage_Transaction_default_instance_);
 }
-inline const ::exchange::Client_Transaction& Client::add_order() const {
-  const ::exchange::Client_Transaction* p = add_order_;
-  // @@protoc_insertion_point(field_get:exchange.Client.add_order)
-  return p != nullptr ? *p : *reinterpret_cast<const ::exchange::Client_Transaction*>(
-      &::exchange::_Client_Transaction_default_instance_);
-}
-inline ::exchange::Client_Transaction* Client::release_add_order() {
-  // @@protoc_insertion_point(field_release:exchange.Client.add_order)
-  _has_bits_[0] &= ~0x00000001u;
-  ::exchange::Client_Transaction* temp = add_order_;
+inline ::exchange::ClientMessage_Transaction* ClientMessage::release_add_order() {
+  // @@protoc_insertion_point(field_release:exchange.ClientMessage.add_order)
+  
+  ::exchange::ClientMessage_Transaction* temp = add_order_;
   add_order_ = nullptr;
   return temp;
 }
-inline ::exchange::Client_Transaction* Client::mutable_add_order() {
-  _has_bits_[0] |= 0x00000001u;
+inline ::exchange::ClientMessage_Transaction* ClientMessage::mutable_add_order() {
+  
   if (add_order_ == nullptr) {
-    auto* p = CreateMaybeMessage<::exchange::Client_Transaction>(GetArenaNoVirtual());
+    auto* p = CreateMaybeMessage<::exchange::ClientMessage_Transaction>(GetArenaNoVirtual());
     add_order_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:exchange.Client.add_order)
+  // @@protoc_insertion_point(field_mutable:exchange.ClientMessage.add_order)
   return add_order_;
 }
-inline void Client::set_allocated_add_order(::exchange::Client_Transaction* add_order) {
+inline void ClientMessage::set_allocated_add_order(::exchange::ClientMessage_Transaction* add_order) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
     delete add_order_;
@@ -1428,12 +1284,12 @@ inline void Client::set_allocated_add_order(::exchange::Client_Transaction* add_
       add_order = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, add_order, submessage_arena);
     }
-    _has_bits_[0] |= 0x00000001u;
+    
   } else {
-    _has_bits_[0] &= ~0x00000001u;
+    
   }
   add_order_ = add_order;
-  // @@protoc_insertion_point(field_set_allocated:exchange.Client.add_order)
+  // @@protoc_insertion_point(field_set_allocated:exchange.ClientMessage.add_order)
 }
 
 #ifdef __GNUC__
@@ -1454,15 +1310,15 @@ inline void Client::set_allocated_add_order(::exchange::Client_Transaction* add_
 
 PROTOBUF_NAMESPACE_OPEN
 
-template <> struct is_proto_enum< ::exchange::Server_MessageType> : ::std::true_type {};
+template <> struct is_proto_enum< ::exchange::ServerMessage_MessageType> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::exchange::Server_MessageType>() {
-  return ::exchange::Server_MessageType_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::exchange::ServerMessage_MessageType>() {
+  return ::exchange::ServerMessage_MessageType_descriptor();
 }
-template <> struct is_proto_enum< ::exchange::Client_MessageType> : ::std::true_type {};
+template <> struct is_proto_enum< ::exchange::ClientMessage_MessageType> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::exchange::Client_MessageType>() {
-  return ::exchange::Client_MessageType_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::exchange::ClientMessage_MessageType>() {
+  return ::exchange::ClientMessage_MessageType_descriptor();
 }
 template <> struct is_proto_enum< ::exchange::StockType> : ::std::true_type {};
 template <>

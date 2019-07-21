@@ -1,55 +1,59 @@
-syntax = "proto2";
+syntax = "proto3";
 
 package exchange;
 
 enum StockType {
-  BOND = 1;
-  VALBS = 2;
-  VALE = 3; 
+  BOND = 0;
+  VALBS = 1;
+  VALE = 2; 
 }
 
 enum Dir {
-  BUY = 1;
-  SELL = 2; 
+  BUY = 0;
+  SELL = 1; 
 }
 
 message PriceAndSize {
-  required int32 price = 1;
-  required int32 size = 2;
+   int32 price = 1;
+   int32 size = 2;
 }
 
-message Server {
+message ServerMessage {
   enum MessageType {
-    HELLO = 1;
-    BOOK = 2;
-    FILL = 3;
-    REJECTED = 4;
+    HELLO = 0;
+    BOOK = 1;
+    FILL = 2;
+    REJECTED = 3;
   }
 
   message Position {
-    required StockType symbol = 1;
+    StockType symbol = 1;
     repeated PriceAndSize buy = 2;
     repeated PriceAndSize sell = 3;
   }
 
-  required MessageType t = 1;
-  optional Position book = 2;
+  MessageType t = 1;
+  Position book = 2;
 }
 
-message Client {
+message ClientMessage {
   enum MessageType {
-    HELLO = 1;
-    ADD_ORDER = 2;
+    HELLO = 0;
+    ADD_ORDER = 1;
   }
 
   message Transaction {
-    required StockType symbol = 1;
-    required int32 price = 2;
-    required int32 size = 3;
-    required Dir dir = 4;
+     StockType symbol = 1;
+     int32 price = 2;
+     int32 size = 3;
+     Dir dir = 4;
   }
 
-  required MessageType t = 1;
-  optional Transaction add_order = 2;
+  MessageType t = 1;
+  Transaction add_order = 2;
+}
+
+service Exchange {
+  rpc Message(stream ClientMessage) returns (stream ServerMessage) {}
 }
 
