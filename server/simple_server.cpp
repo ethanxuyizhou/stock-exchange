@@ -131,6 +131,73 @@ class ServerImpl final : public Exchange::Service {
     record_mutex.unlock();
   }
 
+  void combineOrders(const std::string &symbol, int price) {
+    Market_data market_data = record[symbol];
+    std::map<int, std::vector<Offer>> buy = market_data.get_buy();
+    std::map<int, std::vector<Offer>> sell = market_data.get_sell();
+    if (buy.find(price) == buy.end() || sell.find(price) == sell.end())
+      return;
+    std::vector<Offer> buy_offers = buy[price];
+    std::vector<Offer> sell_offers = sell[price];
+    std::vector<Offer> new_buy_offers, new_sell_offers;
+
+    int buy_size = Offer::total_size(buy_offers);
+    int sell_size = Offer::total_size(sell_offers);
+    // TODO: move duplicated code into another function.
+    if (buy_size == sell_size) {
+      for (Offer offer : buy_offers)
+        sendFillOrders(symbol, price, Dir::BUY, offer.size, offer.name);
+      for (Offer offer : sell_offers)
+        sendFillOrders(symbol, price, Dir::SELL, offer.size, offer.name);
+    } else if (buy_size > sell_size) {
+      for (Offer offer : sell_offers)
+        sendFillOrders(symbol, price, Dir::SELL, offer.size, offer.name);
+      int accum = 0;
+      int index;
+      for (int i = 0; i < buy_offers.size(); ++i) {
+        Offer offer = buy_offers[i];
+        if (accum + offer.size > sell_size) {
+          sendFillOrders(symbol, price, Dir::BUY, sell_size - accum,
+                         offer.name);
+          index = i;
+          break;
+        } else if (accum + offer.size == sell_size) {
+          sendFillOrders(symbol, price, Dir::BUY, offer.size, offer.name);
+          index = i + 1;
+          break;
+        } else {
+          sendFillOrders(symbol, price, Dir::BUY, offer.size, offer.name);
+          accum += offer.size;
+        }
+      }
+      new_buy_offers.assign(buy_offers.begin() + index, buy_offers.end());
+    } else {
+      for (Offer offer : buy_offers)
+        sendFillOrders(symbol, price, Dir::BUY, offer.size, offer.name);
+      int accum = 0;
+      int index;
+      for (int i = 0; i < sell_offers.size(); ++i) {
+        Offer offer = sell_offers[i];
+        if (accum + offer.size > buy_size) {
+          sendFillOrders(symbol, price, Dir::SELL, buy_size - accum,
+                         offer.name);
+          index = i;
+          break;
+        } else if (accum + offer.size == buy_size) {
+          sendFillOrders(symbol, price, Dir::SELL, offer.size, offer.name);
+          index = i + 1;
+          break;
+        } else {
+          sendFillOrders(symbol, price, Dir::SELL, offer.size, offer.name);
+          accum += offer.size;
+        }
+      }
+      new_sell_offers.assign(sell_offers.begin() + index, sell_offers.end());
+    }
+    record[symbol].set_buy(price, new_buy_offers);
+    record[symbol].set_sell(price, new_sell_offers);
+  }
+
   void AddOrder(const exchange::ClientMessage *query) {
     const exchange::ClientMessage_Transaction transaction = query->add_order();
     std::string symbol = stocktype_to_string(transaction.symbol());
@@ -142,6 +209,7 @@ class ServerImpl final : public Exchange::Service {
       record[symbol].add_buy(price, size, name);
     else if (transaction.dir() == Dir::SELL)
       record[symbol].add_sell(price, size, name);
+    combineOrders(symbol, price);
     record_mutex.unlock();
   }
 
@@ -155,84 +223,6 @@ class ServerImpl final : public Exchange::Service {
     fill_response->set_dir(dir);
     response->set_allocated_fill(fill_response);
     writers[name]->Write(*response);
-  }
-
-  void combineAndSendOrder() {
-    record_mutex.lock();
-    for (auto it = record.begin(); it != record.end(); ++it) {
-      std::string symbol = it->first;
-      Market_data market_data = it->second;
-      std::map<price, std::vector<Offer>> buy = market_data.get_buy();
-      std::map<price, std::vector<Offer>> sell = market_data.get_sell();
-      for (auto const &it : buy) {
-        int price = it.first;
-        if (sell.find(price) != sell.end()) {
-          std::vector<Offer> buy_offers = it.second;
-          std::vector<Offer> sell_offers = sell[price];
-          std::vector<Offer> new_buy_offers, new_sell_offers;
-
-          int buy_size = Offer::total_size(buy_offers);
-          int sell_size = Offer::total_size(sell_offers);
-          // TODO: move duplicated code into another function.
-          if (buy_size == sell_size) {
-            for (Offer offer : buy_offers)
-              sendFillOrders(symbol, price, Dir::BUY, offer.size, offer.name);
-            for (Offer offer : sell_offers)
-              sendFillOrders(symbol, price, Dir::SELL, offer.size, offer.name);
-          } else if (buy_size > sell_size) {
-            for (Offer offer : sell_offers)
-              sendFillOrders(symbol, price, Dir::SELL, offer.size, offer.name);
-            int accum = 0;
-            int index;
-            for (int i = 0; i < buy_offers.size(); ++i) {
-              Offer offer = buy_offers[i];
-              if (accum + offer.size > sell_size) {
-                sendFillOrders(symbol, price, Dir::BUY, sell_size - accum,
-                               offer.name);
-                index = i;
-                break;
-              } else if (accum + offer.size == sell_size) {
-                sendFillOrders(symbol, price, Dir::BUY, offer.size, offer.name);
-                index = i + 1;
-                break;
-              } else {
-                sendFillOrders(symbol, price, Dir::BUY, offer.size, offer.name);
-                accum += offer.size;
-              }
-            }
-            new_buy_offers.assign(buy_offers.begin() + index, buy_offers.end());
-          } else {
-            for (Offer offer : buy_offers)
-              sendFillOrders(symbol, price, Dir::BUY, offer.size, offer.name);
-            int accum = 0;
-            int index;
-            for (int i = 0; i < sell_offers.size(); ++i) {
-              Offer offer = sell_offers[i];
-              if (accum + offer.size > buy_size) {
-                sendFillOrders(symbol, price, Dir::SELL, buy_size - accum,
-                               offer.name);
-                index = i;
-                break;
-              } else if (accum + offer.size == buy_size) {
-                sendFillOrders(symbol, price, Dir::SELL, offer.size,
-                               offer.name);
-                index = i + 1;
-                break;
-              } else {
-                sendFillOrders(symbol, price, Dir::SELL, offer.size,
-                               offer.name);
-                accum += offer.size;
-              }
-            }
-            new_sell_offers.assign(sell_offers.begin() + index,
-                                   sell_offers.end());
-          }
-          record[symbol].set_buy(price, new_buy_offers);
-          record[symbol].set_sell(price, new_sell_offers);
-        }
-      }
-    }
-    record_mutex.unlock();
   }
 
   Status
