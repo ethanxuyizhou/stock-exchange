@@ -32,8 +32,15 @@ message ServerMessage {
     repeated PriceAndSize sell = 3;
   }
 
+	message Fill {
+	  StockType symbol = 1;
+		int32 size = 2;
+		Dir dir = 3;
+  }
+
   MessageType t = 1;
   Position book = 2;
+  Fill fill = 3;
 }
 
 message ClientMessage {

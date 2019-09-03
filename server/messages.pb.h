@@ -48,7 +48,7 @@ struct TableStruct_messages_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[5]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[6]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -68,6 +68,9 @@ extern PriceAndSizeDefaultTypeInternal _PriceAndSize_default_instance_;
 class ServerMessage;
 class ServerMessageDefaultTypeInternal;
 extern ServerMessageDefaultTypeInternal _ServerMessage_default_instance_;
+class ServerMessage_Fill;
+class ServerMessage_FillDefaultTypeInternal;
+extern ServerMessage_FillDefaultTypeInternal _ServerMessage_Fill_default_instance_;
 class ServerMessage_Position;
 class ServerMessage_PositionDefaultTypeInternal;
 extern ServerMessage_PositionDefaultTypeInternal _ServerMessage_Position_default_instance_;
@@ -77,6 +80,7 @@ template<> ::exchange::ClientMessage* Arena::CreateMaybeMessage<::exchange::Clie
 template<> ::exchange::ClientMessage_Transaction* Arena::CreateMaybeMessage<::exchange::ClientMessage_Transaction>(Arena*);
 template<> ::exchange::PriceAndSize* Arena::CreateMaybeMessage<::exchange::PriceAndSize>(Arena*);
 template<> ::exchange::ServerMessage* Arena::CreateMaybeMessage<::exchange::ServerMessage>(Arena*);
+template<> ::exchange::ServerMessage_Fill* Arena::CreateMaybeMessage<::exchange::ServerMessage_Fill>(Arena*);
 template<> ::exchange::ServerMessage_Position* Arena::CreateMaybeMessage<::exchange::ServerMessage_Position>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace exchange {
@@ -477,6 +481,149 @@ class ServerMessage_Position :
 };
 // -------------------------------------------------------------------
 
+class ServerMessage_Fill :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:exchange.ServerMessage.Fill) */ {
+ public:
+  ServerMessage_Fill();
+  virtual ~ServerMessage_Fill();
+
+  ServerMessage_Fill(const ServerMessage_Fill& from);
+  ServerMessage_Fill(ServerMessage_Fill&& from) noexcept
+    : ServerMessage_Fill() {
+    *this = ::std::move(from);
+  }
+
+  inline ServerMessage_Fill& operator=(const ServerMessage_Fill& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ServerMessage_Fill& operator=(ServerMessage_Fill&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const ServerMessage_Fill& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ServerMessage_Fill* internal_default_instance() {
+    return reinterpret_cast<const ServerMessage_Fill*>(
+               &_ServerMessage_Fill_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(ServerMessage_Fill& a, ServerMessage_Fill& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ServerMessage_Fill* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ServerMessage_Fill* New() const final {
+    return CreateMaybeMessage<ServerMessage_Fill>(nullptr);
+  }
+
+  ServerMessage_Fill* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ServerMessage_Fill>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const ServerMessage_Fill& from);
+  void MergeFrom(const ServerMessage_Fill& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  #else
+  bool MergePartialFromCodedStream(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  ::PROTOBUF_NAMESPACE_ID::uint8* InternalSerializeWithCachedSizesToArray(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ServerMessage_Fill* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "exchange.ServerMessage.Fill";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_messages_2eproto);
+    return ::descriptor_table_messages_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kSymbolFieldNumber = 1,
+    kSizeFieldNumber = 2,
+    kDirFieldNumber = 3,
+  };
+  // .exchange.StockType symbol = 1;
+  void clear_symbol();
+  ::exchange::StockType symbol() const;
+  void set_symbol(::exchange::StockType value);
+
+  // int32 size = 2;
+  void clear_size();
+  ::PROTOBUF_NAMESPACE_ID::int32 size() const;
+  void set_size(::PROTOBUF_NAMESPACE_ID::int32 value);
+
+  // .exchange.Dir dir = 3;
+  void clear_dir();
+  ::exchange::Dir dir() const;
+  void set_dir(::exchange::Dir value);
+
+  // @@protoc_insertion_point(class_scope:exchange.ServerMessage.Fill)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  int symbol_;
+  ::PROTOBUF_NAMESPACE_ID::int32 size_;
+  int dir_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_messages_2eproto;
+};
+// -------------------------------------------------------------------
+
 class ServerMessage :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:exchange.ServerMessage) */ {
  public:
@@ -519,7 +666,7 @@ class ServerMessage :
                &_ServerMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    3;
 
   friend void swap(ServerMessage& a, ServerMessage& b) {
     a.Swap(&b);
@@ -586,6 +733,7 @@ class ServerMessage :
   // nested types ----------------------------------------------------
 
   typedef ServerMessage_Position Position;
+  typedef ServerMessage_Fill Fill;
 
   typedef ServerMessage_MessageType MessageType;
   static constexpr MessageType HELLO =
@@ -625,6 +773,7 @@ class ServerMessage :
 
   enum : int {
     kBookFieldNumber = 2,
+    kFillFieldNumber = 3,
     kTFieldNumber = 1,
   };
   // .exchange.ServerMessage.Position book = 2;
@@ -638,6 +787,17 @@ class ServerMessage :
   ::exchange::ServerMessage_Position* mutable_book();
   void set_allocated_book(::exchange::ServerMessage_Position* book);
 
+  // .exchange.ServerMessage.Fill fill = 3;
+  bool has_fill() const;
+  private:
+  bool _internal_has_fill() const;
+  public:
+  void clear_fill();
+  const ::exchange::ServerMessage_Fill& fill() const;
+  ::exchange::ServerMessage_Fill* release_fill();
+  ::exchange::ServerMessage_Fill* mutable_fill();
+  void set_allocated_fill(::exchange::ServerMessage_Fill* fill);
+
   // .exchange.ServerMessage.MessageType t = 1;
   void clear_t();
   ::exchange::ServerMessage_MessageType t() const;
@@ -649,6 +809,7 @@ class ServerMessage :
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
   ::exchange::ServerMessage_Position* book_;
+  ::exchange::ServerMessage_Fill* fill_;
   int t_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_messages_2eproto;
@@ -697,7 +858,7 @@ class ClientMessage_Transaction :
                &_ClientMessage_Transaction_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    4;
 
   friend void swap(ClientMessage_Transaction& a, ClientMessage_Transaction& b) {
     a.Swap(&b);
@@ -847,7 +1008,7 @@ class ClientMessage :
                &_ClientMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    5;
 
   friend void swap(ClientMessage& a, ClientMessage& b) {
     a.Swap(&b);
@@ -1114,6 +1275,52 @@ ServerMessage_Position::sell() const {
 
 // -------------------------------------------------------------------
 
+// ServerMessage_Fill
+
+// .exchange.StockType symbol = 1;
+inline void ServerMessage_Fill::clear_symbol() {
+  symbol_ = 0;
+}
+inline ::exchange::StockType ServerMessage_Fill::symbol() const {
+  // @@protoc_insertion_point(field_get:exchange.ServerMessage.Fill.symbol)
+  return static_cast< ::exchange::StockType >(symbol_);
+}
+inline void ServerMessage_Fill::set_symbol(::exchange::StockType value) {
+  
+  symbol_ = value;
+  // @@protoc_insertion_point(field_set:exchange.ServerMessage.Fill.symbol)
+}
+
+// int32 size = 2;
+inline void ServerMessage_Fill::clear_size() {
+  size_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 ServerMessage_Fill::size() const {
+  // @@protoc_insertion_point(field_get:exchange.ServerMessage.Fill.size)
+  return size_;
+}
+inline void ServerMessage_Fill::set_size(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  size_ = value;
+  // @@protoc_insertion_point(field_set:exchange.ServerMessage.Fill.size)
+}
+
+// .exchange.Dir dir = 3;
+inline void ServerMessage_Fill::clear_dir() {
+  dir_ = 0;
+}
+inline ::exchange::Dir ServerMessage_Fill::dir() const {
+  // @@protoc_insertion_point(field_get:exchange.ServerMessage.Fill.dir)
+  return static_cast< ::exchange::Dir >(dir_);
+}
+inline void ServerMessage_Fill::set_dir(::exchange::Dir value) {
+  
+  dir_ = value;
+  // @@protoc_insertion_point(field_set:exchange.ServerMessage.Fill.dir)
+}
+
+// -------------------------------------------------------------------
+
 // ServerMessage
 
 // .exchange.ServerMessage.MessageType t = 1;
@@ -1179,6 +1386,57 @@ inline void ServerMessage::set_allocated_book(::exchange::ServerMessage_Position
   }
   book_ = book;
   // @@protoc_insertion_point(field_set_allocated:exchange.ServerMessage.book)
+}
+
+// .exchange.ServerMessage.Fill fill = 3;
+inline bool ServerMessage::has_fill() const {
+  return this != internal_default_instance() && fill_ != nullptr;
+}
+inline void ServerMessage::clear_fill() {
+  if (GetArenaNoVirtual() == nullptr && fill_ != nullptr) {
+    delete fill_;
+  }
+  fill_ = nullptr;
+}
+inline const ::exchange::ServerMessage_Fill& ServerMessage::fill() const {
+  const ::exchange::ServerMessage_Fill* p = fill_;
+  // @@protoc_insertion_point(field_get:exchange.ServerMessage.fill)
+  return p != nullptr ? *p : *reinterpret_cast<const ::exchange::ServerMessage_Fill*>(
+      &::exchange::_ServerMessage_Fill_default_instance_);
+}
+inline ::exchange::ServerMessage_Fill* ServerMessage::release_fill() {
+  // @@protoc_insertion_point(field_release:exchange.ServerMessage.fill)
+  
+  ::exchange::ServerMessage_Fill* temp = fill_;
+  fill_ = nullptr;
+  return temp;
+}
+inline ::exchange::ServerMessage_Fill* ServerMessage::mutable_fill() {
+  
+  if (fill_ == nullptr) {
+    auto* p = CreateMaybeMessage<::exchange::ServerMessage_Fill>(GetArenaNoVirtual());
+    fill_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:exchange.ServerMessage.fill)
+  return fill_;
+}
+inline void ServerMessage::set_allocated_fill(::exchange::ServerMessage_Fill* fill) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete fill_;
+  }
+  if (fill) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      fill = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, fill, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  fill_ = fill;
+  // @@protoc_insertion_point(field_set_allocated:exchange.ServerMessage.fill)
 }
 
 // -------------------------------------------------------------------
@@ -1373,6 +1631,8 @@ inline void ClientMessage::set_allocated_name(std::string* name) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
