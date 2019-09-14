@@ -82,13 +82,13 @@ std::map<string, grpc::ServerReaderWriter<ServerMessage, ClientMessage> *>
 std::mutex record_mutex;
 
 class ServerImpl final : public Exchange::Service {
-  void Hello(const exchange::ClientMessage *query,
+  void Hello(const exchange::ClientMessage query,
              grpc::ServerReaderWriter<ServerMessage, ClientMessage> *stream) {
     record_mutex.lock();
-    writers.insert(make_pair(query->name(), stream));
+    writers.insert(make_pair(query.name(), stream));
     for (auto it = record.begin(); it != record.end(); ++it) {
-      ServerMessage *book_response;
-      ServerMessage::Position *position;
+      ServerMessage book_response;
+      ServerMessage::Position *position = new ServerMessage::Position();
       position->set_symbol(it->first);
 
       std::map<int, int> buy_info = it->second.get_accumulated_buy();
@@ -111,9 +111,9 @@ class ServerImpl final : public Exchange::Service {
           x->set_size(size);
         }
       }
-      book_response->set_t(ServerMessage_MessageType_BOOK);
-      book_response->set_allocated_book(position);
-      stream->Write(*book_response);
+      book_response.set_t(ServerMessage_MessageType_BOOK);
+      book_response.set_allocated_book(position);
+      stream->Write(book_response);
     }
     record_mutex.unlock();
   }
@@ -198,15 +198,15 @@ class ServerImpl final : public Exchange::Service {
   }
 
   void
-  AddOrder(const exchange::ClientMessage *query,
+  AddOrder(const exchange::ClientMessage query,
            grpc::ServerReaderWriter<ServerMessage, ClientMessage> *stream) {
-    const exchange::ClientMessage_Transaction transaction = query->add_order();
+    const exchange::ClientMessage_Transaction transaction = query.add_order();
     StockType symbol = transaction.symbol();
     int price = transaction.price();
     int size = transaction.size();
-    std::string name = query->name();
+    std::string name = query.name();
     record_mutex.lock();
-    writers.insert(make_pair(query->name(), stream));
+    writers.insert(make_pair(query.name(), stream));
     if (transaction.dir() == Dir::BUY)
       record[symbol].add_buy(price, size, name);
     else if (transaction.dir() == Dir::SELL)
@@ -218,11 +218,11 @@ class ServerImpl final : public Exchange::Service {
   Status
   Message(ServerContext *context,
           grpc::ServerReaderWriter<ServerMessage, ClientMessage> *stream) {
-    ClientMessage *query;
-    while (stream->Read(query)) {
-      if (query->t() == ClientMessage_MessageType_HELLO)
+    ClientMessage query;
+    while (stream->Read(&query)) {
+      if (query.t() == ClientMessage_MessageType_HELLO) {
         Hello(query, stream);
-      else if (query->t() == ClientMessage_MessageType_ADD_ORDER)
+      } else if (query.t() == ClientMessage_MessageType_ADD_ORDER)
         AddOrder(query, stream);
     }
     return Status::OK;
