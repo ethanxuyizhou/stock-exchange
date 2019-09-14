@@ -1,14 +1,14 @@
 #include <iostream>
 #include <map>
 
-#include "messages.grpc.pb.h"
-#include "messages.pb.h"
+#include "../protocol/messages.grpc.pb.h"
+#include "../protocol/messages.pb.h"
+#include <grpc/grpc.h>
 #include <grpcpp/grpcpp.h>
 
 using namespace grpc;
 using namespace exchange;
 
-typedef int price;
 struct Offer {
   int size;
   std::string name;
@@ -26,12 +26,12 @@ struct Offer {
 };
 
 class Market_data {
-  std::map<price, std::vector<Offer>> buy;
-  std::map<price, std::vector<Offer>> sell;
+  std::map<int, std::vector<Offer>> buy;
+  std::map<int, std::vector<Offer>> sell;
 
-  std::map<price, int>
-  get_market_data(const std::map<price, std::vector<Offer>> &x) {
-    std::map<price, int> result;
+  std::map<int, int>
+  get_accumulated_data(const std::map<int, std::vector<Offer>> &x) {
+    std::map<int, int> result;
     for (auto it = x.begin(); it != x.end(); ++it)
       result[it->first] = Offer::total_size(it->second);
     return result;
@@ -54,58 +54,45 @@ public:
 
   void set_sell(int price, std::vector<Offer> s) { sell[price] = s; }
 
-  std::map<int, int> get_accumulated_buy() { return get_market_data(buy); }
+  std::map<int, int> get_accumulated_buy() { return get_accumulated_data(buy); }
 
-  std::map<int, int> get_accumulated_sell() { return get_market_data(sell); }
+  std::map<int, int> get_accumulated_sell() {
+    return get_accumulated_data(sell);
+  }
 
-  std::map<price, std::vector<Offer>> get_buy() { return buy; }
+  std::map<int, std::vector<Offer>> get_buy() { return buy; }
 
-  std::map<price, std::vector<Offer>> get_sell() { return sell; }
+  std::map<int, std::vector<Offer>> get_sell() { return sell; }
 };
 
-std::map<string, Market_data> empty_record() {
-  std::map<string, Market_data> record;
+std::map<StockType, Market_data> empty_record() {
+  std::map<StockType, Market_data> record;
   Market_data bond, valbz, vale;
-  record["BOND"] = bond;
-  record["VALBZ"] = valbz;
-  record["VALE"] = vale;
+  record[StockType::BOND] = bond;
+  record[StockType::VALBZ] = valbz;
+  record[StockType::VALE] = vale;
   return record;
 }
 
-std::map<string, Market_data> record = empty_record();
+std::map<StockType, Market_data> record = empty_record();
 
 std::map<string, grpc::ServerReaderWriter<ServerMessage, ClientMessage> *>
     writers;
 
 std::mutex record_mutex;
 
-std::string stocktype_to_string(StockType symbol) {
-  return StockType_Name(symbol);
-}
-
-StockType stocktype_of_string(std::string s) {
-  if (s == "BOND")
-    return StockType::BOND;
-  else if (s == "VALBZ")
-    return StockType::VALBZ;
-  return StockType::VALE;
-}
-
 class ServerImpl final : public Exchange::Service {
   void Hello(const exchange::ClientMessage *query,
              grpc::ServerReaderWriter<ServerMessage, ClientMessage> *stream) {
-    ServerMessage *hello_response;
-    hello_response->set_t(ServerMessage::HELLO);
-    stream->Write(*hello_response);
-    writers.insert(make_pair(query->name(), stream));
     record_mutex.lock();
+    writers.insert(make_pair(query->name(), stream));
     for (auto it = record.begin(); it != record.end(); ++it) {
       ServerMessage *book_response;
       ServerMessage::Position *position;
-      position->set_symbol(stocktype_of_string(it->first));
+      position->set_symbol(it->first);
 
-      std::map<price, int> buy_info = it->second.get_accumulated_buy();
-      std::map<price, int> sell_info = it->second.get_accumulated_sell();
+      std::map<int, int> buy_info = it->second.get_accumulated_buy();
+      std::map<int, int> sell_info = it->second.get_accumulated_sell();
       for (auto it = buy_info.begin(); it != buy_info.end(); ++it) {
         int price = it->first;
         int size = it->second;
@@ -131,7 +118,19 @@ class ServerImpl final : public Exchange::Service {
     record_mutex.unlock();
   }
 
-  void combineOrders(const std::string &symbol, int price) {
+  void sendFillOrders(const StockType &symbol, int price, Dir dir, int size,
+                      const std::string &name) {
+    ServerMessage *response;
+    response->set_t(ServerMessage::FILL);
+    ServerMessage::Fill *fill_response;
+    fill_response->set_symbol(symbol);
+    fill_response->set_size(size);
+    fill_response->set_dir(dir);
+    response->set_allocated_fill(fill_response);
+    writers[name]->Write(*response);
+  }
+
+  void combineOrders(const StockType &symbol, int price) {
     Market_data market_data = record[symbol];
     std::map<int, std::vector<Offer>> buy = market_data.get_buy();
     std::map<int, std::vector<Offer>> sell = market_data.get_sell();
@@ -198,31 +197,22 @@ class ServerImpl final : public Exchange::Service {
     record[symbol].set_sell(price, new_sell_offers);
   }
 
-  void AddOrder(const exchange::ClientMessage *query) {
+  void
+  AddOrder(const exchange::ClientMessage *query,
+           grpc::ServerReaderWriter<ServerMessage, ClientMessage> *stream) {
     const exchange::ClientMessage_Transaction transaction = query->add_order();
-    std::string symbol = stocktype_to_string(transaction.symbol());
+    StockType symbol = transaction.symbol();
     int price = transaction.price();
     int size = transaction.size();
     std::string name = query->name();
     record_mutex.lock();
+    writers.insert(make_pair(query->name(), stream));
     if (transaction.dir() == Dir::BUY)
       record[symbol].add_buy(price, size, name);
     else if (transaction.dir() == Dir::SELL)
       record[symbol].add_sell(price, size, name);
     combineOrders(symbol, price);
     record_mutex.unlock();
-  }
-
-  void sendFillOrders(const std::string &symbol, int price, Dir dir, int size,
-                      const std::string &name) {
-    ServerMessage *response;
-    response->set_t(ServerMessage::FILL);
-    ServerMessage::Fill *fill_response;
-    fill_response->set_symbol(stocktype_of_string(symbol));
-    fill_response->set_size(size);
-    fill_response->set_dir(dir);
-    response->set_allocated_fill(fill_response);
-    writers[name]->Write(*response);
   }
 
   Status
@@ -233,7 +223,7 @@ class ServerImpl final : public Exchange::Service {
       if (query->t() == ClientMessage_MessageType_HELLO)
         Hello(query, stream);
       else if (query->t() == ClientMessage_MessageType_ADD_ORDER)
-        AddOrder(query);
+        AddOrder(query, stream);
     }
     return Status::OK;
   }
