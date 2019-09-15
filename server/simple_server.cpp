@@ -120,14 +120,16 @@ class ServerImpl final : public Exchange::Service {
 
   void sendFillOrders(const StockType &symbol, int price, Dir dir, int size,
                       const std::string &name) {
-    ServerMessage *response;
-    response->set_t(ServerMessage::FILL);
-    ServerMessage::Fill *fill_response;
+    ServerMessage response;
+    response.set_t(ServerMessage::FILL);
+    ServerMessage::Fill *fill_response = new ServerMessage::Fill();
     fill_response->set_symbol(symbol);
     fill_response->set_size(size);
     fill_response->set_dir(dir);
-    response->set_allocated_fill(fill_response);
-    writers[name]->Write(*response);
+    response.set_allocated_fill(fill_response);
+    std::cout << "Name: " << name << std::endl;
+    writers[name]->Write(response);
+    std::cout << "Order size: " << size << " Price: " << price << std::endl;
   }
 
   void combineOrders(const StockType &symbol, int price) {
@@ -158,6 +160,7 @@ class ServerImpl final : public Exchange::Service {
         if (accum + offer.size > sell_size) {
           sendFillOrders(symbol, price, Dir::BUY, sell_size - accum,
                          offer.name);
+          buy_offers[i].size -= (sell_size - accum);
           index = i;
           break;
         } else if (accum + offer.size == sell_size) {
@@ -180,6 +183,7 @@ class ServerImpl final : public Exchange::Service {
         if (accum + offer.size > buy_size) {
           sendFillOrders(symbol, price, Dir::SELL, buy_size - accum,
                          offer.name);
+          sell_offers[i].size -= (buy_size - accum);
           index = i;
           break;
         } else if (accum + offer.size == buy_size) {

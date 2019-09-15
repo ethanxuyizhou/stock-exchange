@@ -25,15 +25,15 @@ public:
     ClientMessage::Transaction *transaction = new ClientMessage::Transaction();
     transaction->set_symbol(StockType::BOND);
     transaction->set_price(1000);
-    transaction->set_size(999);
-    transaction->set_dir(Dir::BUY);
+    transaction->set_size(500);
+    transaction->set_dir(Dir::SELL);
     add_order_message.set_allocated_add_order(transaction);
-    add_order_message.set_name("Ethan");
+    add_order_message.set_name("Mia");
     stream->Write(add_order_message);
 
     ClientMessage hello_message;
     hello_message.set_t(ClientMessage_MessageType_HELLO);
-    hello_message.set_name("Ethan");
+    hello_message.set_name("Mia");
     stream->Write(hello_message);
     ServerMessage response;
     while (stream->Read(&response)) {
